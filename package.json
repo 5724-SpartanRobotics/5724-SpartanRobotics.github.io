@@ -1,0 +1,14 @@
+{
+  "name": "spartan_robotics_website",
+  "version": "1.0.0",
+  "description": "A website for the FIRST Robotics Competition team #5724, Spartan Robotics, based in Salem, Virginia.",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "author": "Matthew Trent Christley Sowder",
+  "license": "MIT",
+  "dependencies": {
+    "node-sass": "^4.9.2"
+  }
+}

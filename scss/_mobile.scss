@@ -38,6 +38,10 @@
       height: 150px;
     }
   }
+  .info {
+    grid-template-areas: 'leadersimage' 'leaders' 'team' 'vision' 'outreach';
+    grid-template-columns: 1fr;
+  }
 }
 
 // Smartphones

@@ -90,6 +90,11 @@ main {
   .team-outreach {
     grid-area: outreach;
   }
+  .first-link {
+    grid-area: firstimage;
+    margin: auto;
+    border-radius: 50%;
+  }
   .first-image {
     grid-area: firstimage;
     margin: auto;

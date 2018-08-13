@@ -176,6 +176,10 @@ main {
     grid-area: vision; }
   .info .team-outreach {
     grid-area: outreach; }
+  .info .first-link {
+    grid-area: firstimage;
+    margin: auto;
+    border-radius: 50%; }
   .info .first-image {
     grid-area: firstimage;
     margin: auto;

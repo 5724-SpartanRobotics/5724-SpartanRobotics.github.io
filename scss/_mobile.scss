@@ -1,10 +1,18 @@
 // Widescreens
-@include mediaXl {}
+@include mediaXl {
+  .sponsors {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 
-// Desktops and laptops
-@include mediaLg {}
+// Desktops & Laptops
+@include mediaLg {
+  .sponsors {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
-// Tablets and small laptops
+// Tablets & Small Laptops
 @include mediaMd {
   main {
     align-items: center;
@@ -32,21 +40,33 @@
     height: 25vh;
     transform: translate3d(100%, 0, 0);
     .portrait {
-      // TODO: CHANGE FROM DUMMY PIC
-      background: url('../img/150x150.png');
+      background: url('../img/portrait_small.jpg');
       width: 150px;
       height: 150px;
     }
   }
-  .info {
-    grid-template-areas: 'leadersimage' 'leaders' 'team' 'vision' 'outreach' 'firstimage' 'first' 'league' 'temp' 'history';
+  .about-info {
+    grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
     grid-template-columns: 1fr;
+  }
+  .sponsors {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 // Smartphones
 @include mediaSm {
-  main#home h1 {
-    margin-top: 10vh;
+  main {
+    padding: 2rem;
+    #home h1 {
+      margin-top: 10vh;
+    }
+    .lg-heading {
+      margin-top: 1rem;
+      font-size: 5rem;
+    }
+  }
+  .sponsors {
+    grid-template-columns: 1fr;
   }
 }

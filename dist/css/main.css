@@ -199,6 +199,55 @@ main {
     padding: 0.5rem;
     border-bottom: #8D2424 5px solid; }
 
+.schedule {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: 'tbd tbd2 tbd3 tbd4';
+  grid-template-columns: repeat(3, 1fr); }
+  .schedule .event-tbd {
+    grid-area: tbd; }
+  .schedule .event-tbd2 {
+    grid-area: tbd2; }
+  .schedule .event-tbd3 {
+    grid-area: tbd3; }
+  .schedule .event-tbd4 {
+    grid-area: tbd4; }
+  .schedule .event {
+    background: #515151;
+    padding: 0.5rem;
+    border-bottom: #8D2424 5px solid; }
+
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr); }
+  .projects img {
+    width: 100%;
+    border: 3px #fff solid; }
+    .projects img:hover {
+      opacity: 0.5;
+      border-color: #8D2424;
+      transition: all 0.5s ease-out; }
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem; }
+  .boxes div {
+    font-size: 2rem;
+    border: 3px #fff solid;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    transition: all 0.5s ease-out; }
+    .boxes div:hover {
+      padding: 0.5rem 1.5rem;
+      background: #8D2424;
+      color: #fff; }
+      .boxes div:hover span {
+        color: #fff; }
+
 .sponsors {
   display: grid;
   grid-gap: 0.7rem;
@@ -236,11 +285,21 @@ main {
   height: 60px; }
 
 @media screen and (min-width: 1171px) {
+  .schedule {
+    grid-template-areas: 'tbd tbd2 tbd3 tbd4';
+    grid-template-columns: repeat(4, 1fr); }
   .sponsors {
+    grid-template-columns: repeat(4, 1fr); }
+  .projects {
     grid-template-columns: repeat(4, 1fr); } }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
+  .schedule {
+    grid-template-areas: 'tbd tbd2 tbd3' 'tbd4 temp temp';
+    grid-template-columns: repeat(3, 1fr); }
   .sponsors {
+    grid-template-columns: repeat(3, 1fr); }
+  .projects {
     grid-template-columns: repeat(3, 1fr); } }
 
 @media screen and (max-width: 768px) {
@@ -266,13 +325,18 @@ main {
     height: 25vh;
     transform: translate3d(100%, 0, 0); }
     .menu-branding .portrait {
-      background: url("../img/portrait_small.jpg");
+      background: url("../img/background.jpg");
       width: 150px;
       height: 150px; }
-  .about-info {
-    grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
+  .info {
+    grid-template-areas: 'leadersimage' 'leaders' 'team' 'vision' 'outreach' 'firstimage' 'first' 'league' 'temp' 'history';
     grid-template-columns: 1fr; }
+  .schedule {
+    grid-template-areas: 'tbd tbd2' 'tbd3 tbd4';
+    grid-template-columns: repeat(2, 1fr); }
   .sponsors {
+    grid-template-columns: repeat(2, 1fr); }
+  .projects {
     grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
@@ -283,5 +347,10 @@ main {
     main .lg-heading {
       margin-top: 1rem;
       font-size: 5rem; }
+  .schedule {
+    grid-template-areas: 'tbd' 'tbd2' 'tbd3' 'tbd4';
+    grid-template-columns: 1fr; }
   .sponsors {
+    grid-template-columns: 1fr; }
+  .projects {
     grid-template-columns: 1fr; } }

@@ -121,6 +121,71 @@ main {
   }
 }
 
+// Schedule
+.schedule {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: 'tbd tbd2 tbd3 tbd4';
+  grid-template-columns: repeat(3, 1fr);
+  .event-tbd {
+    grid-area: tbd;
+  }
+  .event-tbd2 {
+    grid-area: tbd2;
+  }
+  .event-tbd3 {
+    grid-area: tbd3;
+  }
+  .event-tbd4 {
+    grid-area: tbd4;
+  }
+  .event {
+    background: lighten($primary-color, 5);
+    padding: 0.5rem;
+    border-bottom: $secondary-color 5px solid;
+  }
+}
+
+// Work/Projects
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr);
+  img {
+    width: 100%;
+    border: 3px #fff solid;
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeOut;
+    }
+  }
+}
+
+// Contact page
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+  div {
+    font-size: 2rem;
+    border: 3px #fff solid;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    @include easeOut;
+    &:hover {
+      padding: 0.5rem 1.5rem;
+      background: $secondary-color;
+      color: set-text-color($secondary-color);
+      span {
+        color: set-text-color($secondary-color);
+      }
+    }
+  }
+}
+
 // Sponsors
 .sponsors {
   display: grid;

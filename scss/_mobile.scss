@@ -1,13 +1,27 @@
 // Widescreens
 @include mediaXl {
+  .schedule {
+    grid-template-areas: 'tbd tbd2 tbd3 tbd4';
+    grid-template-columns: repeat(4, 1fr);
+  }
   .sponsors {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .projects {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
 // Desktops & Laptops
 @include mediaLg {
+  .schedule {
+    grid-template-areas: 'tbd tbd2 tbd3' 'tbd4 temp temp';
+    grid-template-columns: repeat(3, 1fr);
+  }
   .sponsors {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .projects {
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -40,16 +54,23 @@
     height: 25vh;
     transform: translate3d(100%, 0, 0);
     .portrait {
-      background: url('../img/portrait_small.jpg');
+      background: url('../img/background.jpg');
       width: 150px;
       height: 150px;
     }
   }
-  .about-info {
-    grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
+  .info {
+    grid-template-areas: 'leadersimage' 'leaders' 'team' 'vision' 'outreach' 'firstimage' 'first' 'league' 'temp' 'history';
     grid-template-columns: 1fr;
   }
+  .schedule {
+    grid-template-areas: 'tbd tbd2' 'tbd3 tbd4';
+    grid-template-columns: repeat(2, 1fr);
+  }
   .sponsors {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .projects {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -66,7 +87,14 @@
       font-size: 5rem;
     }
   }
+  .schedule {
+    grid-template-areas: 'tbd' 'tbd2' 'tbd3' 'tbd4';
+    grid-template-columns: 1fr;
+  }
   .sponsors {
+    grid-template-columns: 1fr;
+  }
+  .projects {
     grid-template-columns: 1fr;
   }
 }

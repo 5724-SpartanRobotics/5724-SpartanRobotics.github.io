@@ -69,7 +69,7 @@ main {
 .info {
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: 'leadersimage leaders leaders' 'team vision outreach';
+  grid-template-areas: 'leadersimage leaders leaders' 'team vision outreach' 'firstimage first first' 'league temp history';
   grid-template-columns: repeat(3, 1fr);
   .leaders-image {
     grid-area: leadersimage;
@@ -89,6 +89,25 @@ main {
   }
   .team-outreach {
     grid-area: outreach;
+  }
+  .first-image {
+    grid-area: firstimage;
+    margin: auto;
+    border-radius: 50%;
+    border: $secondary-color 3px solid;
+  }
+  .team-first {
+    grid-area: first;
+    font-size: 1.5rem;
+  }
+  .team-league {
+    grid-area: league;
+  }
+  .team-temp {
+    grid-area: temp;
+  }
+  .team-history {
+    grid-area: history;
   }
   .team {
     background: lighten($primary-color, 5);

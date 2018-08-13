@@ -160,7 +160,7 @@ main {
 .info {
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: 'leadersimage leaders leaders' 'team vision outreach';
+  grid-template-areas: 'leadersimage leaders leaders' 'team vision outreach' 'firstimage first first' 'league temp history';
   grid-template-columns: repeat(3, 1fr); }
   .info .leaders-image {
     grid-area: leadersimage;
@@ -176,6 +176,20 @@ main {
     grid-area: vision; }
   .info .team-outreach {
     grid-area: outreach; }
+  .info .first-image {
+    grid-area: firstimage;
+    margin: auto;
+    border-radius: 50%;
+    border: #8D2424 3px solid; }
+  .info .team-first {
+    grid-area: first;
+    font-size: 1.5rem; }
+  .info .team-league {
+    grid-area: league; }
+  .info .team-temp {
+    grid-area: temp; }
+  .info .team-history {
+    grid-area: history; }
   .info .team {
     background: #515151;
     padding: 0.5rem;
@@ -213,7 +227,10 @@ main {
     .menu-branding .portrait {
       background: url("../img/150x150.png");
       width: 150px;
-      height: 150px; } }
+      height: 150px; }
+  .info {
+    grid-template-areas: 'leadersimage' 'leaders' 'team' 'vision' 'outreach' 'firstimage' 'first' 'league' 'temp' 'history';
+    grid-template-columns: 1fr; } }
 
 @media screen and (max-width: 500px) {
   main#home h1 {

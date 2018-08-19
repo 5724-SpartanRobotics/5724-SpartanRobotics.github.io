@@ -35,8 +35,9 @@
 	transition: opacity 1s ease-in-out;
 }
 
-.slide-caption {
+.slideshow .slide-caption {
 	@extend %slide-text-shared;
+	transition: opacity 0.2s ease-in-out;
 	background-color: #0009;
 	bottom: initial;
 	top: 0px;

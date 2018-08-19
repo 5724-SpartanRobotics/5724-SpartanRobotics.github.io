@@ -3,7 +3,7 @@ function next(slideshow) {
 	slideshow.idx++;
 	updateSlideshow(slideshow);
 	if (!slideshow.paused) {
-		setTimeout(next, slideshow.waitLen, slideshow);
+		slideshow.nextTimeout = setTimeout(next, slideshow.waitLen, slideshow);
 	}
 }
 
@@ -13,7 +13,7 @@ function prev(slideshow) {
 	updateSlideshow(slideshow);
 	
 	if (!slideshow.paused) {
-		setTimeout(next, slideshow.waitLen, slideshow);
+		slideshow.nextTimeout = setTimeout(next, slideshow.waitLen, slideshow);
 	}
 }
 
@@ -24,7 +24,7 @@ function pause(slideshow) {
 	slideshow.controls.children[1].innerHTML = slideshow.paused ? '<i class="fas fa-play"></i>' : '<i class="fas fa-pause"></i>';
 	
 	if (!slideshow.paused) {
-		setTimeout(next, slideshow.waitLen, slideshow);
+		slideshow.nextTimeout = setTimeout(next, slideshow.waitLen, slideshow);
 	}
 }
 
@@ -45,11 +45,28 @@ function updateSlideshow(slideshow) {
 }
 
 function onHover(slideshow) {
-	if (!slideshow.controls.classList.contains("invisible-stuff")) {
-		slideshow.controls.classList.add("invisible-stuff");
-	} else {
+	clearTimeout(slideshow.controlFadeTimeout);
+	
+	if (slideshow.controls.classList.contains("invisible-stuff")) {
 		slideshow.controls.classList.remove("invisible-stuff");
 	}
+}
+
+function isParentOf(possibleParent, el) {
+	let parent = el.parentElement;
+	
+	while (parent) {
+		if (parent == possibleParent) {
+			return true;
+		}
+		parent = parent.parentElement;
+	}
+	
+	return false;
+}
+
+function fadeControls(slideshow) {
+	slideshow.controls.classList.add("invisible-stuff");
 }
 
 function runSlideshow(el, waitLen) {
@@ -79,7 +96,8 @@ function runSlideshow(el, waitLen) {
 		nextTimeout: 0,
 		paused: false,
 		idx: 0,
-		slides: []
+		slides: [],
+		controlFadeTimeout: 0
 	};
 	
 	for (let i = 0; i < el.children.length; i++) {
@@ -91,8 +109,9 @@ function runSlideshow(el, waitLen) {
 	prevBtn.onclick = function() { prev(slideshow); };
 	pauseBtn.onclick = function() { pause(slideshow); };
 	nextBtn.onclick = function() { next(slideshow); };
-	slideshow.el.onmouseover = function() { onHover(slideshow) };
+	slideshow.el.onmouseenter = function() { onHover(slideshow); };
+	slideshow.el.onmouseout = function(e) { if (!isParentOf(slideshow.el, e.relatedTarget)) slideshow.controlFadeTimeout = setTimeout(fadeControls, 2000, slideshow); };
 	
 	updateSlideshow(slideshow);
-	setTimeout(next, slideshow.waitLen, slideshow);
+	slideshow.nextTimeout = setTimeout(next, slideshow.waitLen, slideshow);
 }

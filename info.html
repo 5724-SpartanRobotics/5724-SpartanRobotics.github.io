@@ -62,9 +62,29 @@
     </h2>
 
     <div class="info">
-      <!-- TODO: CREATE SLIDESHOW WITH TEAM LEADERS -->
-      <img src="img/250x250.png" alt="Yah Yeet" class="leaders-image">
-
+      <div id="leadersSlideshow" class="slideshow">
+        <div class="slide leaders-image">
+          <img src="img/teamleaders/2017-2018/john.jpg" alt="John Frazier">
+          <span class="slide-caption">John Frazier, Co-President</span>
+        </div>
+        <div class="slide leaders-image">
+          <img src="img/teamleaders/2017-2018/yodel.jpg" alt="Yudel Martinez">
+          <span class="slide-caption">Yudel Martinez, Co-President</span>
+        </div>
+        <div class="slide leaders-image">
+          <img src="img/teamleaders/2017-2018/david.jpg" alt="David Winslow">
+          <span class="slide-caption">David Winslow, Sr. Vice President</span>
+        </div>
+        <div class="slide leaders-image">
+          <img src="img/teamleaders/2017-2018/jacob.jpg" alt="Jacob Stewart">
+          <span class="slide-caption">Jacob Stewart, Sr. Vice President</span>
+        </div>
+      </div>
+      <script src="js/slideshow.js"></script>
+      <script>
+        runSlideshow(document.getElementById("leadersSlideshow"), 5000);
+      </script>
+      
       <div class="team-leaders">
         <h3 class="text-secondary">TEAM LEADERS</h3>
         <p>We have two Presidents and two Vice Presidents. John Frazier and Yudel Martinez are the co-Presidents; David Winslow

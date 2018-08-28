@@ -5,7 +5,7 @@
   "main": "index.js",
   "homepage": "https://MatthewSowder.github.io/SPARTAN-ROBOTICS-WEBSITE",
   "scripts": {
-    "sass": "node-sass -w scss/ -o dist/css/ --recursive",
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive --output-style compressed",
     "deploy": "gh-pages -d dist"
   },
   "author": "Matthew Trent Christley Sowder",

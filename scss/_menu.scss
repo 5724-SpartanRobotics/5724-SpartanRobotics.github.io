@@ -81,6 +81,7 @@
   }
   .nav-item {
     transform: translate3d(600px, 0, 0);
+    font-family: 'Caesar Dressing', cursive;
     @include easeOut;
     &.show {
       // Slide in from right
@@ -88,6 +89,8 @@
     }
     &.current>a {
       color: $secondary-color;
+      -webkit-text-stroke-width: 0.015em;
+      -webkit-text-stroke-color: white;
     }
   }
   .nav-link {
@@ -98,6 +101,8 @@
     padding: 1rem 0;
     font-weight: 300;
     color: set-text-color($primary-color);
+    -webkit-text-stroke-width: 0.015em;
+    -webkit-text-stroke-color: white;
     text-decoration: none;
     @include easeOut;
     &:hover {

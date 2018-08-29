@@ -1,6 +1,7 @@
 @import 'config';
 @import 'slideshow';
 @import 'menu';
+
 * {
   box-sizing: border-box;
 }
@@ -23,6 +24,10 @@ h3 {
   font-weight: 400;
   &.lg-heading {
     font-size: 6rem;
+    font-family: 'Caesar Dressing', cursive;
+    -webkit-text-fill-color: $secondary-color;
+    -webkit-text-stroke-width: 0.03em;
+    -webkit-text-stroke-color: white;
   }
   &.sm-heading {
     margin-bottom: 2rem;
@@ -43,7 +48,11 @@ header {
 }
 
 .text-secondary {
-  color: $secondary-color;
+  font-size: 1.2em;
+  font-family: 'Caesar Dressing', cursive;
+  -webkit-text-fill-color: $secondary-color;
+  -webkit-text-stroke-width: 0.01em;
+  -webkit-text-stroke-color: white;
 }
 
 main {

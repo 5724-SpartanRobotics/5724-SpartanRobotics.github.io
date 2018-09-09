@@ -1,6 +1,9 @@
 @import 'config';
 @import 'slideshow';
 @import 'menu';
+
+@import "../node_modules/sass-text-stroke/_text-stroke";
+
 * {
   box-sizing: border-box;
 }
@@ -23,6 +26,9 @@ h3 {
   font-weight: 400;
   &.lg-heading {
     font-size: 6rem;
+    font-family: 'Caesar Dressing', cursive;
+    @include text-stroke(2.5, white);
+    color: $secondary-color;
   }
   &.sm-heading {
     margin-bottom: 2rem;
@@ -43,6 +49,9 @@ header {
 }
 
 .text-secondary {
+  font-size: 1.2em;
+  font-family: 'Caesar Dressing', cursive;
+  @include text-stroke(1, white);
   color: $secondary-color;
 }
 

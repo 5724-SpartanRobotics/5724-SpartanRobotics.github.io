@@ -1,3 +1,5 @@
+@import "../node_modules/sass-text-stroke/_text-stroke";
+
 // Menu button
 .menu-btn {
   position: absolute;
@@ -81,6 +83,7 @@
   }
   .nav-item {
     transform: translate3d(600px, 0, 0);
+    font-family: 'Caesar Dressing', cursive;
     @include easeOut;
     &.show {
       // Slide in from right
@@ -88,6 +91,7 @@
     }
     &.current>a {
       color: $secondary-color;
+      @include text-stroke(1, white);
     }
   }
   .nav-link {
@@ -98,17 +102,17 @@
     padding: 1rem 0;
     font-weight: 300;
     color: set-text-color($primary-color);
-    text-decoration: none;
     @include easeOut;
     &:hover {
       color: $secondary-color;
+      @include text-stroke(1, white);
     }
   }
 }
 
 // Delay each nav item slide by 0.1s
-@for $x from 1 through 4 {
+@for $x from 1 through 6 {
   .nav-item:nth-child(#{$x}) {
-    transition-delay: $x * 0.1s;
+    transition-delay: $x * 0.05s;
   }
 }

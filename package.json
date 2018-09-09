@@ -13,5 +13,8 @@
   "dependencies": {
     "gh-pages": "^1.2.0",
     "node-sass": "^4.9.3"
+  },
+  "devDependencies": {
+    "sass-text-stroke": "^1.0.1"
   }
 }

@@ -2,6 +2,8 @@
 @import 'slideshow';
 @import 'menu';
 
+@import "../node_modules/sass-text-stroke/_text-stroke";
+
 * {
   box-sizing: border-box;
 }
@@ -25,9 +27,8 @@ h3 {
   &.lg-heading {
     font-size: 6rem;
     font-family: 'Caesar Dressing', cursive;
-    -webkit-text-fill-color: $secondary-color;
-    -webkit-text-stroke-width: 0.03em;
-    -webkit-text-stroke-color: white;
+    @include text-stroke(2.5, white);
+    color: $secondary-color;
   }
   &.sm-heading {
     margin-bottom: 2rem;
@@ -50,9 +51,8 @@ header {
 .text-secondary {
   font-size: 1.2em;
   font-family: 'Caesar Dressing', cursive;
-  -webkit-text-fill-color: $secondary-color;
-  -webkit-text-stroke-width: 0.01em;
-  -webkit-text-stroke-color: white;
+  @include text-stroke(1, white);
+  color: $secondary-color;
 }
 
 main {

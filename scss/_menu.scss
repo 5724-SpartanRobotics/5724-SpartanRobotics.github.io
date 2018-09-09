@@ -1,3 +1,5 @@
+@import "../node_modules/sass-text-stroke/_text-stroke";
+
 // Menu button
 .menu-btn {
   position: absolute;
@@ -89,8 +91,7 @@
     }
     &.current>a {
       color: $secondary-color;
-      -webkit-text-stroke-width: 0.015em;
-      -webkit-text-stroke-color: white;
+      @include text-stroke(1, white);
     }
   }
   .nav-link {
@@ -101,12 +102,10 @@
     padding: 1rem 0;
     font-weight: 300;
     color: set-text-color($primary-color);
-    -webkit-text-stroke-width: 0.015em;
-    -webkit-text-stroke-color: white;
-    text-decoration: none;
     @include easeOut;
     &:hover {
       color: $secondary-color;
+      @include text-stroke(1, white);
     }
   }
 }

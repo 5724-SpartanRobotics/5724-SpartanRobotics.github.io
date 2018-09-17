@@ -45,7 +45,7 @@
   &-branding,
   &-nav {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
     float: left;
@@ -54,6 +54,8 @@
     overflow: hidden;
   }
   &-nav {
+    justify-content: flex-start;
+    overflow: auto;
     margin: 0;
     padding: 0;
     background: darken($primary-color, 5);
@@ -97,7 +99,7 @@
     position: relative;
     font-size: 30px;
     text-transform: uppercase;
-    padding: 1rem 0;
+    padding: 2rem 0 0 0;
     font-weight: 300;
     color: set-text-color($primary-color);
     @include easeOut;
@@ -106,6 +108,10 @@
       @include text-stroke(1, white);
     }
   }
+}
+
+.nav-item:nth-last-child(1) .nav-link {
+  padding-bottom: 1rem;
 }
 
 // Delay each nav item slide by 0.05s

@@ -40,13 +40,17 @@
   div.menu-branding {
     float: none;
     width: 100%;
-    min-height: 0;
     &.show {
       transform: translate3d(0, 0, 0);
     }
   }
+  .menu-nav-scroller {
+    max-height: 75vh;
+    overflow-y: auto;
+  }
   .menu-nav {
-    height: 75vh;
+    height: auto;
+    min-height: 75vh;
     transform: translate3d(-100%, 0, 0);
     font-size: 24px;
   }
@@ -96,4 +100,70 @@
   .projects {
     grid-template-columns: 1fr;
   }
+}
+
+@mixin menu-bar {
+  .menu-btn {
+    display: none;
+    visibility: none;
+  }
+  .menu {
+    position: relative;
+    top: 0;
+    width: 100%;
+    opacity: 0.9;
+    visibility: visible;
+    &-branding {
+      display: none;
+    }
+    &-nav {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background: darken($primary-color, 5);
+      overflow: hidden;
+      transform: none;
+      transition: none;
+      display: block;
+      width: 100%;
+      height: initial;
+    }
+    .nav-item {
+      font-family: 'Caesar Dressing', cursive;
+      float: left;
+      transition: none;
+      transform: none;
+      &.current > a {
+        color: $secondary-color;
+        @include text-stroke(1, white);
+      }
+    }
+    .nav-link {
+      display: block;
+      text-align: center;
+      padding: 14px 16px;
+      font-size: 1.6em;
+      font-weight: 300;
+      color: set-text-color($primary-color);
+      &:hover {
+        background-color: #111;
+        color: $secondary-color;
+        @include text-stroke(1, white);
+      }
+      transition: color 0.5s ease-out,
+        text-shadow 0.5s ease-out;
+    }
+  }
+
+  header {
+    position: relative;
+  }
+}
+
+@include mediaLg {
+  @include menu-bar
+}
+
+@include mediaXl {
+  @include menu-bar
 }

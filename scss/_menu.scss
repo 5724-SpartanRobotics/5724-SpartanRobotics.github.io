@@ -74,11 +74,9 @@
       transform: translate3d(0, 0, 0);
     }
     .portrait {
-      width: 250px;
-      height: 250px;
-      background: url('../img/250x250.png'); // TODO: CHANGE FROM DUMMY PIC
-      border-radius: 50%;
-      border: solid 3px $secondary-color;
+      width: 400px;
+      height: 400px;
+      background: url("../img/logos/SpartanLogo_White-varient-vectorized.svg") no-repeat center;
     }
   }
   .nav-item {
@@ -110,7 +108,7 @@
   }
 }
 
-// Delay each nav item slide by 0.1s
+// Delay each nav item slide by 0.05s
 @for $x from 1 through 6 {
   .nav-item:nth-child(#{$x}) {
     transition-delay: $x * 0.05s;

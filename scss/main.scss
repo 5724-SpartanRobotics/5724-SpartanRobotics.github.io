@@ -79,7 +79,7 @@ main {
 .info {
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: 'leadersimage leaders leaders' 'team vision outreach' 'firstimage first first' 'league temp history';
+  grid-template-areas: 'leadersimage leaders leaders' 'team vision outreach' 'firstimage first first' 'league history history';
   grid-template-columns: repeat(3, 1fr);
   .leaders-image {
     grid-area: leadersimage;
@@ -108,8 +108,8 @@ main {
   .first-image {
     grid-area: firstimage;
     margin: auto;
-    border-radius: 50%;
-    border: $secondary-color 3px solid;
+    width: 350px;
+    height: auto;
   }
   .team-first {
     grid-area: first;
@@ -117,9 +117,6 @@ main {
   }
   .team-league {
     grid-area: league;
-  }
-  .team-temp {
-    grid-area: temp;
   }
   .team-history {
     grid-area: history;
@@ -204,11 +201,6 @@ main {
   img {
     width: 100%;
     border: 3px #fff solid;
-    &:hover {
-      opacity: 0.5;
-      border-color: $secondary-color;
-      @include easeOut;
-    }
   }
 }
 

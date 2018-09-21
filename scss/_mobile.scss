@@ -102,6 +102,10 @@
       }
     }
   }
+  .boxes div {
+    font-size: 1.5rem;
+    padding: 0.75rem 1.25rem;
+  }
   .schedule {
     grid-template-areas: 'tbd' 'tbd2' 'tbd3' 'tbd4';
     grid-template-columns: 1fr;

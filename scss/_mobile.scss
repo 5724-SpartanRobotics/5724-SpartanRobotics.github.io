@@ -34,6 +34,7 @@
     .lg-heading {
       line-height: 1;
       margin-bottom: 1rem;
+      font-size: 4.5rem;
     }
   }
   ul.menu-nav,
@@ -76,6 +77,13 @@
   .projects {
     grid-template-columns: repeat(2, 1fr);
   }
+  .slideshow {
+    // 4rem paddding on each side of main, so this
+    // fits it perfectly in the middle with a 3:2
+    // ratio on the images
+    width: calc(100vw - 8rem);
+    height: calc(calc(100vw - 8rem) / 1.5);
+  }
 }
 
 // Smartphones
@@ -87,8 +95,16 @@
     }
     .lg-heading {
       margin-top: 1rem;
-      font-size: 4rem;
+      font-size: 3.7rem;
+
+      &#infoHeading {
+        font-size: 3.5rem;
+      }
     }
+  }
+  .boxes div {
+    font-size: 1.5rem;
+    padding: 0.75rem 1.25rem;
   }
   .schedule {
     grid-template-areas: 'tbd' 'tbd2' 'tbd3' 'tbd4';
@@ -99,6 +115,17 @@
   }
   .projects {
     grid-template-columns: 1fr;
+  }
+  .slideshow {
+    // 2rem paddding on each side of main, so this
+    // fits it perfectly in the middle with a 3:2
+    // ratio on the images
+    width: calc(100vw - 4rem);
+    height: calc(calc(100vw - 4rem) / 1.5);
+
+    .slide-caption {
+      font-size: 0.8em;
+    }
   }
 }
 

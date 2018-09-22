@@ -63,6 +63,9 @@
       height: 150px;
     }
   }
+  .index-content .img-block {
+    grid-template-columns: 1fr;
+  }
   .info {
     grid-template-areas: 'leadersimage' 'leaders' 'team' 'vision' 'outreach' 'firstimage' 'first' 'league' 'temp' 'history';
     grid-template-columns: 1fr;
@@ -83,6 +86,16 @@
     // ratio on the images
     width: calc(100vw - 8rem);
     height: calc(calc(100vw - 8rem) / 1.5);
+  }
+  @keyframes fadeSlideIn {
+    0% {
+      transform: translateY(20%);
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
   }
 }
 
@@ -187,10 +200,24 @@
   }
 }
 
+@mixin spartan-head {
+  main#home {
+    #spartanHead {
+      max-width: 21em;
+      position: absolute;
+    }
+    #headerText {
+      margin-left: 21em;
+    }
+  }
+}
+
 @include mediaLg {
-  @include menu-bar
+  @include menu-bar;
+  @include spartan-head;
 }
 
 @include mediaXl {
-  @include menu-bar
+  @include menu-bar;
+  @include spartan-head;
 }

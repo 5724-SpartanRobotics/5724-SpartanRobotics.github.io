@@ -56,6 +56,7 @@ header {
 }
 
 main {
+  @include background();
   padding: 4rem;
   min-height: calc(100vh - 60px);
   .icons {
@@ -69,16 +70,47 @@ main {
     }
   }
   &#home {
+    min-height: calc(100vh - 100px);
     overflow: hidden;
-    h1 {
-      margin-top: 20vh;
+
+    div.fade-div {
+      animation: 1s ease-out 0s 1 fadeSlideIn;
+    }
+
+    /*display: grid;
+    gap: 30px;
+    grid-template-areas: 'title info';
+    grid-template-columns: repeat(3, 1fr);*/
+  }
+}
+
+.index-content {
+  p {
+    font-size: 1.25em;
+    padding: 0 3em 2em 3em;
+  }
+
+  .img-block {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    p {
+      text-align: center;
+      font-size: 1.5em;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
     }
   }
 }
 
 .info {
   display: grid;
-  grid-gap: 30px;
+  gap: 30px;
   grid-template-areas: 'leadersimage leaders leaders' 'team vision outreach' 'firstimage first first' 'league history history';
   grid-template-columns: repeat(3, 1fr);
   .leaders-image {
@@ -132,7 +164,7 @@ main {
 // Schedule
 .schedule {
   display: grid;
-  grid-gap: 30px;
+  gap: 30px;
   grid-template-areas: 'tbd tbd2 tbd3 tbd4';
   grid-template-columns: repeat(3, 1fr);
   .event-tbd {
@@ -157,7 +189,7 @@ main {
 // Work/Projects
 .projects {
   display: grid;
-  grid-gap: 0.7rem;
+  gap: 0.7rem;
   grid-template-columns: repeat(3, 1fr);
   img {
     width: 100%;
@@ -197,7 +229,7 @@ main {
 // Sponsors
 .sponsors {
   display: grid;
-  grid-gap: 0.7rem;
+  gap: 0.7rem;
   grid-template-columns: repeat(3, 1fr);
   img {
     width: 100%;

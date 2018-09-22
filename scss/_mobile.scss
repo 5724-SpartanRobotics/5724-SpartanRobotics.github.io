@@ -63,6 +63,9 @@
       height: 150px;
     }
   }
+  .index-content .img-block {
+    grid-template-columns: 1fr;
+  }
   .info {
     grid-template-areas: 'leadersimage' 'leaders' 'team' 'vision' 'outreach' 'firstimage' 'first' 'league' 'temp' 'history';
     grid-template-columns: 1fr;

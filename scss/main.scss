@@ -85,6 +85,27 @@ main {
 }
 
 .index-content {
+  p {
+    font-size: 1.25em;
+    padding: 0 3em 2em 3em;
+  }
+
+  .img-block {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    p {
+      text-align: center;
+      font-size: 1.5em;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 }
 
 .info {

@@ -42,10 +42,18 @@ a {
   text-decoration: none;
 }
 
+a.link {
+  text-decoration: underline;
+}
+
+#brbInfo {
+  font-size: 1.2em;
+}
+
 header {
   position: fixed;
   z-index: 2;
-  width: 100%
+  width: 100%;
 }
 
 .text-secondary {

@@ -173,19 +173,16 @@ main {
 .schedule {
   display: grid;
   gap: 30px;
-  grid-template-areas: 'tbd tbd2 tbd3 tbd4';
+  grid-template-areas: 'event1 event2 event3';
   grid-template-columns: repeat(3, 1fr);
-  .event-tbd {
-    grid-area: tbd;
+  .event-1 {
+    grid-area: event1;
   }
-  .event-tbd2 {
-    grid-area: tbd2;
+  .event-2 {
+    grid-area: event2;
   }
-  .event-tbd3 {
-    grid-area: tbd3;
-  }
-  .event-tbd4 {
-    grid-area: tbd4;
+  .event-3 {
+    grid-area: event3;
   }
   .event {
     background: lighten($primary-color, 5);

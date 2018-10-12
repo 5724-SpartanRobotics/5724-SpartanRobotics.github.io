@@ -1,8 +1,8 @@
 // Widescreens
 @include mediaXl {
   .schedule {
-    grid-template-areas: 'tbd tbd2 tbd3 tbd4';
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 'event1 event2 event3';
+    grid-template-columns: repeat(3, 1fr);
   }
   .sponsors {
     grid-template-columns: repeat(4, 1fr);
@@ -15,7 +15,7 @@
 // Desktops & Laptops
 @include mediaLg {
   .schedule {
-    grid-template-areas: 'tbd tbd2 tbd3' 'tbd4 temp temp';
+    grid-template-areas: 'event1 event2 event3';
     grid-template-columns: repeat(3, 1fr);
   }
   .sponsors {
@@ -71,7 +71,7 @@
     grid-template-columns: 1fr;
   }
   .schedule {
-    grid-template-areas: 'tbd tbd2' 'tbd3 tbd4';
+    grid-template-areas: 'event1 event2' 'event3 event3';
     grid-template-columns: repeat(2, 1fr);
   }
   .sponsors {
@@ -120,7 +120,7 @@
     padding: 0.75rem 1.25rem;
   }
   .schedule {
-    grid-template-areas: 'tbd' 'tbd2' 'tbd3' 'tbd4';
+    grid-template-areas: 'event1' 'event2' 'event3';
     grid-template-columns: 1fr;
   }
   .sponsors {

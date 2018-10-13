@@ -84,11 +84,6 @@ main {
     div.fade-div {
       animation: 1s ease-out 0s 1 fadeSlideIn;
     }
-
-    /*display: grid;
-    gap: 30px;
-    grid-template-areas: 'title info';
-    grid-template-columns: repeat(3, 1fr);*/
   }
 }
 
@@ -173,17 +168,8 @@ main {
 .schedule {
   display: grid;
   gap: 30px;
-  grid-template-areas: 'event1 event2 event3';
   grid-template-columns: repeat(3, 1fr);
-  .event-1 {
-    grid-area: event1;
-  }
-  .event-2 {
-    grid-area: event2;
-  }
-  .event-3 {
-    grid-area: event3;
-  }
+  
   .event {
     background: lighten($primary-color, 5);
     padding: 0.5rem;

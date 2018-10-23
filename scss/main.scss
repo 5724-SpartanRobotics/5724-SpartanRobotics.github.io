@@ -64,6 +64,9 @@ header {
 }
 
 main {
+  // Compatibility with IE
+  display: inline-block;
+  
   @include background();
   padding: 4rem;
   min-height: calc(100vh - 60px);

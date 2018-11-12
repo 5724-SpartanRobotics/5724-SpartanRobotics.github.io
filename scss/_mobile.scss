@@ -64,8 +64,9 @@
       height: 150px;
     }
   }
-  .index-content .img-block {
-    grid-template-columns: 1fr;
+  .img-block {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
   }
   .info {
     grid-template-areas: 'leadersimage' 'leaders' 'team' 'vision' 'outreach' 'firstimage' 'first' 'league' 'temp' 'history';
@@ -114,6 +115,9 @@
         font-size: 3.5rem;
       }
     }
+  }
+  .img-block {
+    grid-template-columns: 1fr;
   }
   .boxes div {
     font-size: 1.5rem;

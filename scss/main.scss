@@ -1,6 +1,7 @@
 @import 'config';
 @import 'slideshow';
 @import 'menu';
+@import 'photos';
 
 @import "../node_modules/sass-text-stroke/_text-stroke";
 
@@ -94,19 +95,9 @@ main {
   }
 
   .img-block {
-    display: grid;
-    gap: 30px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-
     p {
       text-align: center;
       font-size: 1.5em;
-    }
-
-    img {
-      width: 100%;
-      height: auto;
     }
   }
 }

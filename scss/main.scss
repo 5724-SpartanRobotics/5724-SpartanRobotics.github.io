@@ -27,7 +27,7 @@ h3 {
   font-weight: 400;
   &.lg-heading {
     font-size: 6rem;
-    font-family: 'Caesar Dressing', cursive;
+    font-family: 'Caesar Dressing', sans-serif;
     @include text-stroke(2.5, white);
     color: $secondary-color;
   }

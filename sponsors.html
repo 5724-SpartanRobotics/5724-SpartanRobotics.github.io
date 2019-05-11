@@ -14,57 +14,17 @@ title: Our Sponsors | Spartan Robotics - Team 5724
 
   <div id="sponsorGroup" class="sponsors">
     <!-- This adds all of the sponsors that have logos. A few others are listed below. -->
-    <script>
-      var sponsorDiv = document.getElementById('sponsorGroup');
 
-      var sponsors = [
-        ["AFA", "afa.png", "https://www.afa.org/"],
-        ["Mac and Bob's", "mac-and-bob-s.jpg", "https://www.macandbobs.com/"],
-        ["West Salem Collision Center", "west-salem-collision-center.jpg",
-          "https://calibercollision.com/locate-a-caliber-collision-center/west-salem"
-        ],
-        ["Chick-fil-A", "chick-fil-a.png", "https://www.chick-fil-a.com/"],
-        ["Wells Fargo", "wells-fargo.png", "https://www.wellsfargo.com/"],
-        ["Howell's Motor Freight, Inc.", "howells-motor-freight.png", "https://howellsmotor.com/"],
-        ["Dependable Auto & Truck Repair, Inc.", "dependable.png",
-          "https://www.facebook.com/Dependableautoandtruckrepair/"
-        ],
-        ["Star Tag & Label, Inc.", "startag-label-inc.png", "http://www.startaglabel.com/"],
-        ["Jones Car Company", "john-s-car-company.jpg", "https://www.jonescarcompany.com/index.shtml"],
-        ["Dr. Fame Allergy & Asthma", "fame-allergy-pc.png", "http://www.drtomfame.com/"],
-        ["audiotronics", "audiotronics.png", "https://audiotronics.com/"],
-        ["Allsports Cafe", "all-sports-cafe.png", "http://allsportscafe.net/"],
-        ["Fedstar Federal Credit Union", "fedstar-credit-union.jpg", "https://www.fedstar.org/"],
-        ["Genyes Solutions", "genyes-solutions.jpg", "http://genyessolutions.com/"],
-        ["City of Salem, VA", "city-of-salem.png", "https://salemva.gov/"],
-        ["Institute of Electrial and Electronics Engineers", "ieee.png", "https://www.ieee.org/"],
-        ["New Millennium Building Systems", "new-millennium-building-systems.png", "https://www.newmill.com/"],
-        ["John M. Oakey & Son", "john-m-oakey-son.png", "http://www.johnmoakey.com/"],
-        ["Plastics One", "plastic-one.png", "http://www.plastics1.com/"],
-        ["Rockwell Automation", "rockwell-automation.png", "https://www.rockwellautomation.com/"],
-        ["RCS Industrial", "regional-conveyor-service.png", "http://www.rcsindustrial.com/"],
-        ["Mission BBQ", "mission-bbq.png", "https://mission-bbq.com/"],
-        ["Paradigm International Trading, Ltd.", "paradigmlogo.png", "http://www.paradigmintl.com/"],
-        ["Minuteman Press", "minuteman-press.png", "https://www.minutemanpress.com/"],
-        ["McClung's Architectural Millwork", "mcclungs-millwork.jpg", "https://mcclungsmillwork.com/"]
-      ].sort(function (a, b) {
-        // Sort alphabetically
-        return a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]) || a[2].localeCompare(b[2]);
-      }).reverse();
-
-      sponsors.forEach(function (x) {
-        var div = document.createElement("div");
-        div.classList.add("item");
-
-        div.innerHTML =
-          '<img src="img/sponsors/' + x[1] + '" alt="' + x[0] + '" title="' + x[0] + '">' +
-          '<a href="' + x[2] + '" target="_blank" class="btn-light">' +
-          '<i class="fas fa-eye"></i> Visit Site' +
-          '</a>';
-
-        sponsorDiv.appendChild(div);
-      });
-    </script>
+    {% for sponsor in site.data.sponsors %}
+      <div class="item">
+        <img src="/img/sponsors/{{ sponsor.logo }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}">
+        
+        <a href="{{ sponsor.website }}" target="_blank" class="btn-light">
+          <i class="fas fa-eye"></i> Visit Site
+        </a>
+      </div>
+    {% endfor %}
+    
   </div>
 
   <!-- Sponsors that don't have logos. -->

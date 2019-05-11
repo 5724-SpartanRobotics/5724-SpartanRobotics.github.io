@@ -1,156 +1,72 @@
-<!DOCTYPE html>
-<html lang="en-US">
+---
+layout: default
+title: Our Sponsors | Spartan Robotics - Team 5724
+---
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="keywords" content="Spartan,robotics,5724,FRC,FIRST,competition,robot,robotic,robots,Salem,high school,STEM,science,technology,engineering,mathematics,first robotics competition,Spartan robotics, robotics team,Salem high,Salem high school, technical education,shs,SRIMS">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-    crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Caesar+Dressing" rel="stylesheet">
-  <link rel="stylesheet" href="/css/main.css">
-  <!-- Favicon stuff -->
-  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/img/fav/apple-touch-icon-57x57.png" />
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/fav/apple-touch-icon-114x114.png" />
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/fav/apple-touch-icon-72x72.png" />
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/fav/apple-touch-icon-144x144.png" />
-  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/img/fav/apple-touch-icon-60x60.png" />
-  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/img/fav/apple-touch-icon-120x120.png" />
-  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/img/fav/apple-touch-icon-76x76.png" />
-  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/img/fav/apple-touch-icon-152x152.png" />
-  <link rel="icon" type="image/png" href="/img/fav/favicon-196x196.png" sizes="196x196" />
-  <link rel="icon" type="image/png" href="/img/fav/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/png" href="/img/fav/favicon-32x32.png" sizes="32x32" />
-  <link rel="icon" type="image/png" href="/img/fav/favicon-16x16.png" sizes="16x16" />
-  <link rel="icon" type="image/png" href="/img/fav/favicon-128.png" sizes="128x128" />
-  <meta name="application-name" content="&nbsp;" />
-  <meta name="msapplication-TileColor" content="#444" />
-  <meta name="msapplication-TileImage" content="/img/fav/mstile-144x144.png" />
-  <meta name="msapplication-square70x70logo" content="/img/fav/mstile-70x70.png" />
-  <meta name="msapplication-square150x150logo" content="/img/fav/mstile-150x150.png" />
-  <meta name="msapplication-wide310x150logo" content="/img/fav/mstile-310x150.png" />
-  <meta name="msapplication-square310x310logo" content="/img/fav/mstile-310x310.png" />
-  <!-- End favicon stuff -->
-  <title>Our Sponsors | Spartan Robotics - Team 5724</title>
-</head>
+<!-- Sponsor page content -->
+<main id="sponsors">
+  <h1 class="lg-heading">
+    Our Sponsors
+  </h1>
+  <h2 class="sm-heading">
+    A Special Thanks To Our Sponsors!
+  </h2>
 
-<body>
-  <header>
+  <div id="sponsorGroup" class="sponsors">
+    <!-- This adds all of the sponsors that have logos. A few others are listed below. -->
+    <script>
+      var sponsorDiv = document.getElementById('sponsorGroup');
 
-    <!-- Menu button -->
-    <div class="menu-btn">
-      <div class="btn-line"></div>
-      <div class="btn-line"></div>
-      <div class="btn-line"></div>
-    </div>
+      var sponsors = [
+        ["AFA", "afa.png", "https://www.afa.org/"],
+        ["Mac and Bob's", "mac-and-bob-s.jpg", "https://www.macandbobs.com/"],
+        ["West Salem Collision Center", "west-salem-collision-center.jpg",
+          "https://calibercollision.com/locate-a-caliber-collision-center/west-salem"
+        ],
+        ["Chick-fil-A", "chick-fil-a.png", "https://www.chick-fil-a.com/"],
+        ["Wells Fargo", "wells-fargo.png", "https://www.wellsfargo.com/"],
+        ["Howell's Motor Freight, Inc.", "howells-motor-freight.png", "https://howellsmotor.com/"],
+        ["Dependable Auto & Truck Repair, Inc.", "dependable.png",
+          "https://www.facebook.com/Dependableautoandtruckrepair/"
+        ],
+        ["Star Tag & Label, Inc.", "startag-label-inc.png", "http://www.startaglabel.com/"],
+        ["Jones Car Company", "john-s-car-company.jpg", "https://www.jonescarcompany.com/index.shtml"],
+        ["Dr. Fame Allergy & Asthma", "fame-allergy-pc.png", "http://www.drtomfame.com/"],
+        ["audiotronics", "audiotronics.png", "https://audiotronics.com/"],
+        ["Allsports Cafe", "all-sports-cafe.png", "http://allsportscafe.net/"],
+        ["Fedstar Federal Credit Union", "fedstar-credit-union.jpg", "https://www.fedstar.org/"],
+        ["Genyes Solutions", "genyes-solutions.jpg", "http://genyessolutions.com/"],
+        ["City of Salem, VA", "city-of-salem.png", "https://salemva.gov/"],
+        ["Institute of Electrial and Electronics Engineers", "ieee.png", "https://www.ieee.org/"],
+        ["New Millennium Building Systems", "new-millennium-building-systems.png", "https://www.newmill.com/"],
+        ["John M. Oakey & Son", "john-m-oakey-son.png", "http://www.johnmoakey.com/"],
+        ["Plastics One", "plastic-one.png", "http://www.plastics1.com/"],
+        ["Rockwell Automation", "rockwell-automation.png", "https://www.rockwellautomation.com/"],
+        ["RCS Industrial", "regional-conveyor-service.png", "http://www.rcsindustrial.com/"],
+        ["Mission BBQ", "mission-bbq.png", "https://mission-bbq.com/"],
+        ["Paradigm International Trading, Ltd.", "paradigmlogo.png", "http://www.paradigmintl.com/"],
+        ["Minuteman Press", "minuteman-press.png", "https://www.minutemanpress.com/"],
+        ["McClung's Architectural Millwork", "mcclungs-millwork.jpg", "https://mcclungsmillwork.com/"]
+      ].sort(function (a, b) {
+        // Sort alphabetically
+        return a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]) || a[2].localeCompare(b[2]);
+      }).reverse();
 
-    <!-- Menu open -->
-    <nav class="menu">
-      <div class="menu-branding">
-        <div class="portrait"></div>
-      </div>
-      <div class="menu-nav-scroller">
-        <ul class="menu-nav">
-          <li class="nav-item">
-            <a href="/index.html" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="/info.html" class="nav-link">Team Information</a>
-          </li>
-          <li class="nav-item">
-            <a href="/gallery.html" class="nav-link">Gallery</a>
-          </li>
-          <li class="nav-item">
-            <a href="/schedule.html" class="nav-link">Team Calendar</a>
-          </li>
-          <li class="nav-item">
-            <a href="/brb.html" class="nav-link">Blue Ridge Brawl</a>
-          </li>
-          <li class="nav-item current">
-            <a href="#!" class="nav-link">Our Sponsors</a>
-          </li>
-          <li class="nav-item">
-            <a href="/contact.html" class="nav-link">Contact Us</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+      sponsors.forEach(function (x) {
+        var div = document.createElement("div");
+        div.classList.add("item");
 
-  <!-- Sponsor page content -->
-  <main id="sponsors">
-    <h1 class="lg-heading">
-      Our Sponsors
-    </h1>
-    <h2 class="sm-heading">
-      A Special Thanks To Our Sponsors!
-    </h2>
+        div.innerHTML =
+          '<img src="img/sponsors/' + x[1] + '" alt="' + x[0] + '" title="' + x[0] + '">' +
+          '<a href="' + x[2] + '" target="_blank" class="btn-light">' +
+          '<i class="fas fa-eye"></i> Visit Site' +
+          '</a>';
 
-    <div id="sponsorGroup" class="sponsors">
-      <!-- This adds all of the sponsors that have logos. A few others are listed below. -->
-      <script>
-        var sponsorDiv = document.getElementById('sponsorGroup');
+        sponsorDiv.appendChild(div);
+      });
+    </script>
+  </div>
 
-        var sponsors = [
-          ["AFA", "afa.png", "https://www.afa.org/"],
-          ["Mac and Bob's", "mac-and-bob-s.jpg", "https://www.macandbobs.com/"],
-          ["West Salem Collision Center", "west-salem-collision-center.jpg",
-            "https://calibercollision.com/locate-a-caliber-collision-center/west-salem"
-          ],
-          ["Chick-fil-A", "chick-fil-a.png", "https://www.chick-fil-a.com/"],
-          ["Wells Fargo", "wells-fargo.png", "https://www.wellsfargo.com/"],
-          ["Howell's Motor Freight, Inc.", "howells-motor-freight.png", "https://howellsmotor.com/"],
-          ["Dependable Auto & Truck Repair, Inc.", "dependable.png",
-            "https://www.facebook.com/Dependableautoandtruckrepair/"
-          ],
-          ["Star Tag & Label, Inc.", "startag-label-inc.png", "http://www.startaglabel.com/"],
-          ["Jones Car Company", "john-s-car-company.jpg", "https://www.jonescarcompany.com/index.shtml"],
-          ["Dr. Fame Allergy & Asthma", "fame-allergy-pc.png", "http://www.drtomfame.com/"],
-          ["audiotronics", "audiotronics.png", "https://audiotronics.com/"],
-          ["Allsports Cafe", "all-sports-cafe.png", "http://allsportscafe.net/"],
-          ["Fedstar Federal Credit Union", "fedstar-credit-union.jpg", "https://www.fedstar.org/"],
-          ["Genyes Solutions", "genyes-solutions.jpg", "http://genyessolutions.com/"],
-          ["City of Salem, VA", "city-of-salem.png", "https://salemva.gov/"],
-          ["Institute of Electrial and Electronics Engineers", "ieee.png", "https://www.ieee.org/"],
-          ["New Millennium Building Systems", "new-millennium-building-systems.png", "https://www.newmill.com/"],
-          ["John M. Oakey & Son", "john-m-oakey-son.png", "http://www.johnmoakey.com/"],
-          ["Plastics One", "plastic-one.png", "http://www.plastics1.com/"],
-          ["Rockwell Automation", "rockwell-automation.png", "https://www.rockwellautomation.com/"],
-          ["RCS Industrial", "regional-conveyor-service.png", "http://www.rcsindustrial.com/"],
-          ["Mission BBQ", "mission-bbq.png", "https://mission-bbq.com/"],
-          ["Paradigm International Trading, Ltd.", "paradigmlogo.png", "http://www.paradigmintl.com/"],
-          ["Minuteman Press", "minuteman-press.png", "https://www.minutemanpress.com/"],
-          ["McClung's Architectural Millwork", "mcclungs-millwork.jpg", "https://mcclungsmillwork.com/"]
-        ].sort(function (a, b) {
-          // Sort alphabetically
-          return a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]) || a[2].localeCompare(b[2]);
-        }).reverse();
-
-        sponsors.forEach(function (x) {
-          var div = document.createElement("div");
-          div.classList.add("item");
-
-          div.innerHTML =
-            '<img src="img/sponsors/' + x[1] + '" alt="' + x[0] + '" title="' + x[0] + '">' +
-            '<a href="' + x[2] + '" target="_blank" class="btn-light">' +
-            '<i class="fas fa-eye"></i> Visit Site' +
-            '</a>';
-
-          sponsorDiv.appendChild(div);
-        });
-      </script>
-    </div>
-
-    <!-- Sponsors that don't have logos. -->
-    <p>We would also like to thank our sponsors Eagle American LLC and B&amp;B Fasteners! Thank you for your support!</p>
-  </main>
-
-  <footer id="main-footer">
-    Copyright &copy; 2018
-  </footer>
-
-  <script src="js/main.js"></script>
-</body>
-
-</html>
+  <!-- Sponsors that don't have logos. -->
+  <p>We would also like to thank our sponsors Eagle American LLC and B&amp;B Fasteners! Thank you for your support!</p>
+</main>

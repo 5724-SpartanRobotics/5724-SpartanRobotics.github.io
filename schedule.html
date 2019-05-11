@@ -36,7 +36,7 @@ title: Team Calendar | Spartan Robotics - Team 5724
       {% endif %}
       
       {% if expireTime < currentTime %}
-        <div class="event" data-expireTime="{{ expireTime | date: '%s' }}">
+        <div class="event" data-expireTime="{{ expireTime }}">
           <h3>
             {{ event.title }} - {{ event.date | date: "%A" }}, {{ event.date | date_to_long_string: "ordinal", "US" }}
             <!-- If there is an end date specified, include it in the title -->

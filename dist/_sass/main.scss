@@ -3,7 +3,7 @@
 @import 'menu';
 @import 'photos';
 
-@import "../node_modules/sass-text-stroke/_text-stroke";
+@import "text-stroke";
 
 * {
   box-sizing: border-box;
@@ -28,7 +28,7 @@ h3 {
   &.lg-heading {
     font-size: 6rem;
     font-family: 'Caesar Dressing', sans-serif;
-    @include text-stroke(2.5, white);
+    @include text-stroke(2, white);
     color: $secondary-color;
   }
   &.sm-heading {

@@ -1,4 +1,4 @@
-@import "../node_modules/sass-text-stroke/_text-stroke";
+@import "text-stroke";
 
 // Menu button
 .menu-btn {
@@ -78,7 +78,7 @@
     .portrait {
       width: 400px;
       height: 400px;
-      background: url("../img/logos/SpartanLogo_White-varient-vectorized.svg") no-repeat center;
+      background: url("../assets/img/logos/SpartanLogo_White-varient-vectorized.svg") no-repeat center;
     }
   }
   .nav-item {

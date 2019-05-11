@@ -35,13 +35,15 @@ title: Team Calendar | Spartan Robotics - Team 5724
       <p>No upcoming events found.</p>
     {% else %}
       {% for event in site.upcoming_events %}
+
         {% if event.end_date %}
           {% assign expireTime = event.end_date | date: "%s" | plus: 172800 %}
         {% else %}
           {% assign expireTime = event.date | date: "%s" | plus: 172800 %}
         {% endif %}
         
-        {% if expireTime < currentTime %}
+        {% if expireTime > currentTime %}
+        
           <div class="event" data-expire-time="{{ expireTime }}">
             <h3>
               {{ event.title }} - {{ event.date | date: "%A" }}, {{ event.date | date_to_long_string: "ordinal", "US" }}
@@ -54,7 +56,9 @@ title: Team Calendar | Spartan Robotics - Team 5724
               {{ event.content }}
             </p>
           </div>
+
         {% endif %}
+
       {% endfor %}
     {% endif %}
 

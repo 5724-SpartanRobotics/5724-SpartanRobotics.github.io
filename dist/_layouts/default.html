@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  {% include head.html %}
+</head>
+
+<body>
+  {% unless page.no-nav %}
+  {% include navigation.html %}
+  {% endunless %}
+  
+  {{ content }}
+
+  <footer id="main-footer">
+    Copyright &copy; 2019 Spartan Robotics. All rights reserved.
+  </footer>
+</body>
+
+</html>

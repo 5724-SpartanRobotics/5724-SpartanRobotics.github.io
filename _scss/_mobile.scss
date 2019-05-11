@@ -1,0 +1,226 @@
+// Widescreens
+@include mediaXl {
+  .schedule {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .sponsors {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+// Desktops & Laptops
+@include mediaLg {
+  .schedule {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .sponsors {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// Tablets & Small Laptops
+@include mediaMd {
+  main {
+    align-items: center;
+    text-align: center;
+    .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem;
+      font-size: 4.5rem;
+    }
+  }
+  li {
+    list-style-type: none;  
+  }
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .menu-nav-scroller {
+    max-height: 75vh;
+    overflow-y: auto;
+  }
+  .menu-nav {
+    height: auto;
+    min-height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 24px;
+  }
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0);
+    .portrait {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  .img-block {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  .info {
+    grid-template-areas: 'leadersimage' 'leaders' 'team' 'vision' 'outreach' 'firstimage' 'first' 'league' 'temp' 'history';
+    grid-template-columns: 1fr;
+  }
+  .schedule {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .sponsors {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .slideshow {
+    // 4rem paddding on each side of main, so this
+    // fits it perfectly in the middle with a 3:2
+    // ratio on the images
+    width: calc(100vw - 8rem);
+    height: calc(calc(100vw - 8rem) / 1.5);
+  }
+  @keyframes fadeSlideIn {
+    0% {
+      transform: translateY(20%);
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+// Smartphones
+@include mediaSm {
+  main {
+    padding: 2rem;
+    #home h1 {
+      margin-top: 10vh;
+    }
+    .lg-heading {
+      margin-top: 1rem;
+      font-size: 3.7rem;
+
+      &#infoHeading {
+        font-size: 3.5rem;
+      }
+    }
+  }
+  .img-block {
+    grid-template-columns: 1fr;
+  }
+  .boxes div {
+    font-size: 1.5rem;
+    padding: 0.75rem 1.25rem;
+  }
+  .schedule {
+    grid-template-columns: 1fr;
+  }
+  .sponsors {
+    grid-template-columns: 1fr;
+  }
+  .projects {
+    grid-template-columns: 1fr;
+  }
+  .slideshow {
+    // 2rem paddding on each side of main, so this
+    // fits it perfectly in the middle with a 3:2
+    // ratio on the images
+    width: calc(100vw - 4rem);
+    height: calc(calc(100vw - 4rem) / 1.5);
+
+    .slide-caption {
+      font-size: 0.8em;
+    }
+  }
+}
+
+@mixin menu-bar {
+  .menu-btn {
+    display: none;
+    visibility: none;
+  }
+  .menu {
+    position: relative;
+    top: 0;
+    width: 100%;
+    opacity: 0.9;
+    visibility: visible;
+    &-branding {
+      display: none;
+    }
+    &-nav {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background: darken($primary-color, 5);
+      overflow: hidden;
+      transform: none;
+      transition: none;
+      display: block;
+      width: 100%;
+      height: initial;
+    }
+    .nav-item {
+      font-family: 'Caesar Dressing', cursive;
+      float: left;
+      transition: none;
+      transform: none;
+      &.current > a {
+        color: $secondary-color;
+        @include text-stroke(1, white);
+      }
+    }
+    .nav-link {
+      display: block;
+      text-align: center;
+      padding: 14px 16px;
+      font-size: 1.6em;
+      font-weight: 300;
+      color: set-text-color($primary-color);
+      &:hover {
+        background-color: #111;
+        color: $secondary-color;
+        @include text-stroke(1, white);
+      }
+      transition: color 0.5s ease-out,
+        text-shadow 0.5s ease-out;
+    }
+  }
+
+  header {
+    position: relative;
+  }
+}
+
+@mixin spartan-head {
+  main#home {
+    #spartanHead {
+      max-width: 21em;
+      position: absolute;
+    }
+    #headerText {
+      margin-left: 21em;
+    }
+  }
+}
+
+@include mediaLg {
+  @include menu-bar;
+  @include spartan-head;
+}
+
+@include mediaXl {
+  @include menu-bar;
+  @include spartan-head;
+}

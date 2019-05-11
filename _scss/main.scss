@@ -1,0 +1,274 @@
+@import 'config';
+@import 'slideshow';
+@import 'menu';
+@import 'photos';
+
+@import "../node_modules/sass-text-stroke/_text-stroke";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @include background();
+  background: $primary-color;
+  color: set-text-color($primary-color);
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+
+// Headings
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+  &.lg-heading {
+    font-size: 6rem;
+    font-family: 'Caesar Dressing', sans-serif;
+    @include text-stroke(2.5, white);
+    color: $secondary-color;
+  }
+  &.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+    background: rgba(lighten($primary-color, 2), $sm-background-opacity);
+  }
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a.link {
+  text-decoration: underline;
+}
+
+.breakall {
+  word-break: break-all;
+}
+
+#brbInfo {
+  font-size: 1.2em;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.text-secondary {
+  font-size: 1.2em;
+  font-family: 'Caesar Dressing', cursive;
+  @include text-stroke(1, white);
+  color: $secondary-color;
+}
+
+main {
+  @include background();
+  padding: 4rem;
+  min-height: calc(100vh - 60px);
+  .icons {
+    margin-top: 1rem;
+    a {
+      padding: 0.4rem;
+      &:hover {
+        color: $secondary-color;
+        @include easeOut();
+      }
+    }
+  }
+  &#home {
+    min-height: calc(100vh - 100px);
+    overflow: hidden;
+
+    div.fade-div {
+      animation: 1s ease-out 0s 1 fadeSlideIn;
+    }
+  }
+}
+
+.index-content {
+  p {
+    font-size: 1.25em;
+    padding: 0 3em 2em 3em;
+  }
+
+  .img-block {
+    p {
+      text-align: center;
+      font-size: 1.5em;
+    }
+  }
+}
+
+.info {
+  display: grid;
+  gap: 30px;
+  grid-template-areas: 'leadersimage leaders leaders' 'team vision outreach' 'firstimage first first' 'league history history';
+  grid-template-columns: repeat(3, 1fr);
+  .leaders-image {
+    grid-area: leadersimage;
+    margin: auto;
+    border-radius: 50%;
+    border: $secondary-color 3px solid;
+  }
+  .team-leaders {
+    grid-area: leaders;
+    font-size: 1.5rem;
+  }
+  .team-team {
+    grid-area: team;
+  }
+  .team-vision {
+    grid-area: vision;
+  }
+  .team-outreach {
+    grid-area: outreach;
+  }
+  .first-link {
+    grid-area: firstimage;
+    margin: auto;
+    border-radius: 50%;
+  }
+  .first-image {
+    grid-area: firstimage;
+    margin: auto;
+    width: 350px;
+    max-width: 100%;
+    height: auto;
+  }
+  .team-first {
+    grid-area: first;
+    font-size: 1.5rem;
+  }
+  .team-league {
+    grid-area: league;
+  }
+  .team-history {
+    grid-area: history;
+  }
+  .team {
+    background: lighten($primary-color, 5);
+    padding: 0.5rem;
+    border-bottom: $secondary-color 5px solid;
+  }
+}
+
+// Schedule
+.schedule {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  
+  .event {
+    background: lighten($primary-color, 5);
+    padding: 0.5rem;
+    border-bottom: $secondary-color 5px solid;
+  }
+}
+
+// Work/Projects
+.projects {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr);
+  img {
+    width: 100%;
+    border: 3px #fff solid;
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeOut;
+    }
+  }
+}
+
+// Contact page
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+  div {
+    font-size: 2rem;
+    border: 3px #fff solid;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    @include easeOut;
+    &:hover {
+      padding: 0.5rem 1.5rem;
+      background: $secondary-color;
+      color: set-text-color($secondary-color);
+      span {
+        color: set-text-color($secondary-color);
+      }
+    }
+  }
+}
+
+// Sponsors
+.sponsors {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr);
+  img {
+    width: 100%;
+    border: 3px #fff solid;
+  }
+}
+
+// Button Styles
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  &:hover {
+    background: $secondary-color;
+    color: set-text-color($secondary-color);
+  }
+}
+
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: #fff;
+}
+
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, 50);
+  color: #333;
+}
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: darken($primary-color, 10);
+  color: set-text-color($primary-color);
+  height: 60px;
+}
+
+// Google Calendar (schedule.html)
+div.responsive-cal {
+  position: relative;
+  padding-bottom: 75%;
+  height: 0;
+  overflow: hidden;
+  
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@import 'mobile';

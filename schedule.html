@@ -32,7 +32,7 @@ title: Team Calendar | Spartan Robotics - Team 5724
         {% assign expireTime = event.date | date: "%s" | plus: 172800 %}
       {% endif %}
 
-      {% if expireTime < site.time %}
+      {% if expireTime < site.time | date: '%s' %}
         {{ expireTime }}
       {% endif %}
     {% endfor %}

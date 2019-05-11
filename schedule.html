@@ -18,7 +18,7 @@ title: Team Calendar | Spartan Robotics - Team 5724
     {% for event in site.upcoming_events %}
       <div class="event">
         <h3>
-          {{ event.title }} - {{ event.date }}
+          {{ event.title }} - {{ event.date | date_to_long_string: "ordinal", "US" }}
         </h3>
         <p>
           {{ event.content }}
@@ -61,7 +61,7 @@ title: Team Calendar | Spartan Robotics - Team 5724
           http://www.s-rcchamber.org/salem-christmas-parade/
         </a>
       </p>
-    </div>-->
+    </div>
     <div class="event">
       <h3>
         Miami Valley Regional - Wednesday, March 6 - Saturday, March 9, 2019
@@ -124,7 +124,7 @@ title: Team Calendar | Spartan Robotics - Team 5724
           https://www.thebluealliance.com/event/2019vabla
         </a>
       </p>
-    </div>
+    </div>-->
     
   </div>
 

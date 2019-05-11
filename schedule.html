@@ -18,9 +18,10 @@ title: Team Calendar | Spartan Robotics - Team 5724
     {% for event in site.upcoming_events %}
       <div class="event">
         <h3>
-          {{ event.title }} - {{ event.date | date_to_long_string: "ordinal", "US" }}
+          {{ event.title }} - {{ event.date | date: "%A" }}, {{ event.date | date_to_long_string: "ordinal", "US" }}
           <!-- If there is an end date specified, include it in the title -->
-          {% if event.end_date %}to {{ event.end_date | date_to_long_string: "ordinal", "US" }} {% endif %}
+          {% if event.end_date %}
+          - {{ event.date | date: "%A" }}, {{ event.end_date | date_to_long_string: "ordinal", "US" }} {% endif %}
         </h3>
         <p>
           {{ event.content }}

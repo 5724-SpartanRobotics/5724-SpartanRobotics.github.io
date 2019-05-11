@@ -26,6 +26,11 @@ title: Team Calendar | Spartan Robotics - Team 5724
         the page is rebuilt, only events that are within two days of the beginning of
         their end date will show up.
       -->
+      {% if event.end_date %}
+        {% assign expireTime = event.end_date | date: "%s" | plus: 172800 %}
+      {% else %}
+        {% assign expireTime = event.date | date: "%s" | plus: 172800 %}
+      {% endif %}
     {% endfor %}
     <!--<div class="event">
       <h3>

@@ -14,115 +14,73 @@ title: Team Calendar | Spartan Robotics - Team 5724
   </h2>
 
   <!-- Events -->
-  <div class="schedule">
-    <!--<div class="event">
-      <h3>
-        Spartan Robotics Spaghetti Dinner and Silent Auction - Saturday, November 17, 2018
-      </h3>
-      <p>
-        Location:
-        <a class="link" target="_blank" href="https://goo.gl/maps/4Rg2obini232">
-          Central United Methodist Church, Salem, VA 24153
-        </a>
-        <br />
-        <br />
-        Come see the robot and support Spartan Robotics Team to help with travel, food,
-        and lodging expenses for this upcoming season.
-        <br />
-        <br />
-        Dinner includes: spaghetti, garlic bread, salad, drink &amp; dessert. <br />
-        Adults: $8.00, Children (6 to 12): $5.00, Children 5 and under: FREE.
-        <br />
-        <br />
-        A special thanks to <a class="link" target="_blank" href="http://mammamariasva.com/menu/">Mamma Maria's</a>
-        of Salem for donating the spaghetti and garlic knots!
-      </p>
-    </div>
-    <div class="event">
-      <h3>
-        Salem Christmas Parade - Friday, December 7, 2018
-      </h3>
-      <p>
-        Spartan Robotics will be in the Salem Christmas Parade this year!
-        <br />
-        <br />
-        More info about the Salem Christmas Parade can be found here:
-        <a class="link" target="_blank" href="http://www.s-rcchamber.org/salem-christmas-parade/">
-          http://www.s-rcchamber.org/salem-christmas-parade/
-        </a>
-      </p>
-    </div>-->
-    <div class="event">
-      <h3>
-        Miami Valley Regional - Wednesday, March 6 - Saturday, March 9, 2019
-      </h3>
-      <p>
-        Spartan Robotics will be competing in the Miami Valley Regional in 2019!
-        The event is free and open to the public. The event schedule is available at the link below if you plan to attend.
-        <br />
-        <br />
-        More information, including the event schedule, can be found at:
-        <!-- TODO: should make this inline style a class (maybe callled breakable or something) -->
-        <a class="link breakall" target="_blank" style="word-break:break-all;" href="https://www.firstinspires.org/team-event-search/event?id=37604">
-          https://www.firstinspires.org/team-event-search/event?id=37604
-        </a>
-        <br />
-        The event's The Blue Alliance page, for match schedules, webcast links, etc., can be found here:
-        <!-- TODO: should make this inline style a class (maybe callled breakable or something) -->
-        <a class="link breakall" target="_blank" href="https://www.thebluealliance.com/event/2019ohmv">
-          https://www.thebluealliance.com/event/2019ohmv
-        </a>
-      </p>
-    </div>
-    
-    <div class="event">
-      <h3>
-        Chesapeake District Oxon Hill, Maryland Event - Friday, March 22 - Sunday, March 24, 2019
-      </h3>
-      <p>
-        Spartan Robotics will be competing in the Chesapeake District Oxon Hill, Maryland Event in 2019!
-        The event is free and open to the public. The event schedule is available at the link below if you plan to attend.
-        <br />
-        <br />
-        More information, including the event schedule, can be found at:
-        <!-- TODO: should make this inline style a class (maybe callled breakable or something) -->
-        <a class="link breakall" target="_blank" style="word-break:break-all;" href="https://www.firstchesapeake.org/first-programs/frc/first-chesapeake-district-events/southern-md">
-          https://www.firstchesapeake.org/first-programs/frc/first-chesapeake-district-events/southern-md
-        </a>
-        <br />
-        The event's The Blue Alliance page, for match schedules, webcast links, etc., can be found here:
-        <!-- TODO: should make this inline style a class (maybe callled breakable or something) -->
-        <a class="link breakall" target="_blank" style="word-break:break-all;" href="https://www.thebluealliance.com/event/2019mdoxo">
-          https://www.thebluealliance.com/event/2019mdoxo
-        </a>
-      </p>
-    </div>
-    
-    <div class="event">
-      <h3>
-        Chesapeake District Blacksburg, Virginia Event - Friday, March 29 - Sunday, March 31, 2019
-      </h3>
-      <p>
-        Spartan Robotics will be competing in the Chesapeake District Blacksburg, Virginia Event in 2019!
-        The event is located at Blacksburg High School and is free and open to the public. The
-        event schedule is available at the link below if you plan to attend.
-        <br />
-        <br />
-        More information, including the event schedule, can be found at:
-        <!-- TODO: should make this inline style a class (maybe callled breakable or something) -->
-        <a class="link breakall" target="_blank" style="word-break:break-all;" href="https://www.firstchesapeake.org/first-programs/frc/first-chesapeake-district-events/southwest-va">
-          https://www.firstchesapeake.org/first-programs/frc/first-chesapeake-district-events/southwest-va
-        </a>
-        <br />
-        The event's The Blue Alliance page, for match schedules, webcast links, etc., can be found here:
-        <!-- TODO: should make this inline style a class (maybe callled breakable or something) -->
-        <a class="link breakall" target="_blank" style="word-break:break-all;" href="https://www.thebluealliance.com/event/2019vabla">
-          https://www.thebluealliance.com/event/2019vabla
-        </a>
-      </p>
-    </div>
-    
+  <div class="schedule" id="upcomingEvents">
+    <!-- The plus 0 is necessary to make sure it knows is a number instead of text -->
+    {% assign currentTime = 'now' | date: '%s' | plus: 0 %}
+
+    <!--
+      Skip events that have already happened, but we still have to check in javascript
+      because Jekyll only runs to rebuild the list when changes are made to the site.
+      This converts the date (or end date, if there is one) of the event to seconds,
+      adds 172800 seconds (2 days), and stores it in a variable called expireTime. It
+      then does not add the event if the expireTime is less than the current time (or in
+      other words, the expireTime has already passed). This makes sure that whenever
+      the page is rebuilt, only events that are within two days of the beginning of
+      their end date will show up.
+    -->
+
+    {% for event in site.upcoming_events %}
+
+      {% if event.end_date %}
+        {% assign expireTime = event.end_date | date: "%s" | plus: 172800 %}
+      {% else %}
+        {% assign expireTime = event.date | date: "%s" | plus: 172800 %}
+      {% endif %}
+      
+      {% if expireTime > currentTime %}
+      
+        <div class="event" data-expire-time="{{ expireTime }}">
+          <h3>
+            {{ event.title }} - {{ event.date | date: "%A" }}, {{ event.date | date_to_long_string: "ordinal", "US" }}
+            <!-- If there is an end date specified, include it in the title -->
+            {% if event.end_date %}
+              to {{ event.end_date | date: "%A" }}, {{ event.end_date | date_to_long_string: "ordinal", "US" }}
+            {% endif %}
+          </h3>
+          <p>
+            {{ event.content }}
+          </p>
+        </div>
+
+      {% endif %}
+
+    {% endfor %}
+
   </div>
+
+  <script>
+    // See comment in above section. This hides events that have passed if they have
+    // not yet been removed by a site rebuild (which only occurs when a change is made).
+    var events = document.getElementsByClassName("event");
+
+    var hiddenCount = 0;
+
+    for (var i = 0; i < events.length; i--) {
+      // Date.now() is in milliseconds, but expireTime is in seconds, so
+      // divide Date.now() by 1000
+      if (parseInt(events[i].dataset.expireTime) < Date.now() / 1000) {
+        events[i].hidden = true;
+        hiddenCount++;
+      }
+    }
+
+    if (hiddenCount == events.length || events.length == 0) {
+      var noneFound = document.createElement("p");
+      noneFound.innerText = "No upcoming events found.";
+      document.getElementById('upcomingEvents').appendChild(noneFound);
+    }
+    
+  </script>
 
   <br />
 

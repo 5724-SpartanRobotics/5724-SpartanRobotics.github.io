@@ -15,7 +15,7 @@ title: Team Calendar | Spartan Robotics - Team 5724
 
   <!-- Events -->
   <div class="schedule">
-    {% assign currentTime = 'now' | date: '%s' %}
+    {% assign currentTime = 'now' | date: '%s' | plus: 0 %}
 
     {% for event in site.upcoming_events %}
       <!--
@@ -33,7 +33,11 @@ title: Team Calendar | Spartan Robotics - Team 5724
       {% else %}
         {% assign expireTime = event.date | date: "%s" | plus: 172800 %}
       {% endif %}
-      {{currentTime}}
+      
+      {% if expireTime < currentTime %}
+        test
+      {% endif %}
+
     {% endfor %}
     <!--<div class="event">
       <h3>

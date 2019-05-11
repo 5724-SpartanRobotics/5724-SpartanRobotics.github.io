@@ -33,10 +33,7 @@ title: Team Calendar | Spartan Robotics - Team 5724
       {% else %}
         {% assign expireTime = event.date | date: "%s" | plus: 172800 %}
       {% endif %}
-
-      {% if expireTime < currentTime %}
-        
-      {% endif %}
+      {{currentTime}}
     {% endfor %}
     <!--<div class="event">
       <h3>

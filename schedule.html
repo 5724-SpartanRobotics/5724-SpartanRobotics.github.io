@@ -32,7 +32,7 @@ title: Team Calendar | Spartan Robotics - Team 5724
         {% assign expireTime = event.date | date: "%s" | plus: 172800 %}
       {% endif %}
 
-      {% if expireTime < site.time %}
+      {% if expireTime > site.time %}
         <div class="event" data-expireTime="{{ expireTime | date: '%s' }}">
           <h3>
             {{ event.title }} - {{ event.date | date: "%A" }}, {{ event.date | date_to_long_string: "ordinal", "US" }}
@@ -151,6 +151,8 @@ title: Team Calendar | Spartan Robotics - Team 5724
   </div>
 
   <script>
+    // See comment in above section. This hides events that have passed if they have
+    // not yet been removed by a site rebuild (which only occurs when a change is made).
     var events = document.getElementsByClassName("event");
 
     for (var i = 0; i < events.length; i++) {

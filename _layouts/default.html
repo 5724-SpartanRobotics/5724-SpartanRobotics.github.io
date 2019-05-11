@@ -6,7 +6,10 @@
 </head>
 
 <body>
+  {% unless page.no-nav %}
   {% include navigation.html %}
+  {% endunless %}
+  
   {{ content }}
 
   <footer id="main-footer">

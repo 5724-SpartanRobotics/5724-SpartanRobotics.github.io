@@ -3,10 +3,15 @@ layout: default
 title: Schedule | Blue Ridge Brawl | Spartan Robotics - Team 5724
 ---
 
-<main>
+<main class="centered">
   <h1 class="sm-heading">
-    2019 Blue Ridge Brawl Schedule
+    Blue Ridge Brawl 2019 Preliminary Event Schedule
   </h1>
+  
+  {% for day in site.data.brb_schedule %}
+    <h2 class="sm-heading">
+      {{ day }}
+    </h2>
+  {% endfor %}
 
-  <p>This event's schedule has yet to be determined.</p>
 </main>

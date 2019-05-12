@@ -15,7 +15,8 @@ title: Schedule | Blue Ridge Brawl | Spartan Robotics - Team 5724
     </h2>
 
     <table>
-      {% tablerow event in day %}
+      {% comment %} day[1] gets the data from the file, which is the schedule {% endcomment %}
+      {% tablerow event in day[1] %}
         {{ event.time }}
         {{ event.description }}
       {% endtablerow %}

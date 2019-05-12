@@ -111,6 +111,11 @@ main {
   text-align: center;
 }
 
+table.centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .info {
   display: grid;
   gap: 30px;

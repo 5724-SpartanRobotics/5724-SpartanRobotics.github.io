@@ -179,10 +179,14 @@
       float: left;
       transition: none;
       transform: none;
-      &.current > a {
+      &.current > a, &.current > span > a, &.current > span > span {
         color: $secondary-color;
         @include text-stroke(1, white);
       }
+    }
+    .nav-item-sub.current > a {
+      color: $secondary-color;
+      @include text-stroke(1, white);
     }
     .nav-link {
       display: block;
@@ -191,13 +195,18 @@
       font-size: 1.6em;
       font-weight: 300;
       color: set-text-color($primary-color);
-      &:hover {
+      &:hover, &:hover a {
         background-color: #111;
         color: $secondary-color;
         @include text-stroke(1, white);
       }
       transition: color 0.5s ease-out,
         text-shadow 0.5s ease-out;
+      
+      a {
+        transition: color 0.5s ease-out,
+          text-shadow 0.5s ease-out;
+      }
     }
   }
 

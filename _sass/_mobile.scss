@@ -48,6 +48,7 @@
   }
   .menu-nav {
     height: 75%;
+    overflow: auto;
     transform: translate3d(-100%, 0, 0);
     font-size: 24px;
   }

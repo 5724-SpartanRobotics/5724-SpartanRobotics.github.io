@@ -18,4 +18,10 @@ title: 404 Not Found | Spartan Robotics - Team 5724
         <li><a class="link" href="/sponsors">Our Sponsors</a></li>
         <li><a class="link" href="/contact">Contact Us</a></li>
     </ul>
+    <script>
+        var loc = window.location;
+        if (loc.pathname.replace('/', '') == 'brb.html') {
+            loc.replace(loc.protocol + '//' + loc.hostname + (loc.port ? ':' + loc.port : '') + '/brb');
+        }
+    </script>
 </main>

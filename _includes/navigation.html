@@ -11,30 +11,28 @@
     <div class="menu-branding">
       <div class="portrait"></div>
     </div>
-    <div class="menu-nav-scroller">
-      <ul class="menu-nav">
-        <li {% if page.url == "/" %}class="nav-item current"{% else %}class="nav-item"{% endif %}>
-          <a href="/" class="nav-link">Home</a>
-        </li>
-        <li {% if page.url == "/info.html" %}class="nav-item current"{% else %}class="nav-item"{% endif %}>
-          <a href="/info" class="nav-link">Team Information</a>
-        </li>
-        <li {% if page.url == "/gallery.html" %}class="nav-item current"{% else %}class="nav-item"{% endif %}>
-          <a href="/gallery" class="nav-link">Gallery</a>
-        </li>
-        <li {% if page.url == "/schedule.html" %}class="nav-item current"{% else %}class="nav-item"{% endif %}>
-          <a href="/schedule" class="nav-link">Team Calendar</a>
-        </li>
-        <li {% if page.url == "/brb.html" %}class="nav-item current"{% else %}class="nav-item"{% endif %}>
-          <a href="/brb" class="nav-link">Blue Ridge Brawl</a>
-        </li>
-        <li {% if page.url == "/sponsors.html" %}class="nav-item current"{% else %}class="nav-item"{% endif %}>
-          <a href="/sponsors" class="nav-link">Our Sponsors</a>
-        </li>
-        <li {% if page.url == "/contact.html" %}class="nav-item current"{% else %}class="nav-item"{% endif %}>
-          <a href="/contact" class="nav-link">Contact Us</a>
-        </li>
-      </ul>
-    </div>
+    <ul class="menu-nav">
+      <li {% if page.url == "/" %}class="nav-item current"{% else %}class="nav-item"{% endif %}>
+        <a href="/" class="nav-link">Home</a>
+      </li>
+      <li {% if page.url == "/info.html" %}class="nav-item current"{% else %}class="nav-item"{% endif %}>
+        <a href="/info" class="nav-link">Team Information</a>
+      </li>
+      <li {% if page.url == "/gallery.html" %}class="nav-item current"{% else %}class="nav-item"{% endif %}>
+        <a href="/gallery" class="nav-link">Gallery</a>
+      </li>
+      <li {% if page.url == "/schedule.html" %}class="nav-item current"{% else %}class="nav-item"{% endif %}>
+        <a href="/schedule" class="nav-link">Team Calendar</a>
+      </li>
+      <li {% if page.url == "/brb.html" %}class="nav-item current"{% else %}class="nav-item"{% endif %}>
+        <a href="/brb" class="nav-link">Blue Ridge Brawl</a>
+      </li>
+      <li {% if page.url == "/sponsors.html" %}class="nav-item current"{% else %}class="nav-item"{% endif %}>
+        <a href="/sponsors" class="nav-link">Our Sponsors</a>
+      </li>
+      <li {% if page.url == "/contact.html" %}class="nav-item current"{% else %}class="nav-item"{% endif %}>
+        <a href="/contact" class="nav-link">Contact Us</a>
+      </li>
+    </ul>
   </nav>
 </header>

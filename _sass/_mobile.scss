@@ -46,18 +46,13 @@
       transform: translate3d(0, 0, 0);
     }
   }
-  .menu-nav-scroller {
-    max-height: 75vh;
-    overflow-y: auto;
-  }
   .menu-nav {
-    height: auto;
-    min-height: 75vh;
+    height: 75%;
     transform: translate3d(-100%, 0, 0);
     font-size: 24px;
   }
   .menu-branding {
-    height: 25vh;
+    height: 25%;
     transform: translate3d(100%, 0, 0);
     .portrait {
       width: 150px;
@@ -151,8 +146,11 @@
     visibility: none;
   }
   .menu {
-    position: relative;
+    position: fixed;
     top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     opacity: 0.9;
     visibility: visible;

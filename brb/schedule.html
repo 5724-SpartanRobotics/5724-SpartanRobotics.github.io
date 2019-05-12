@@ -10,8 +10,16 @@ title: Schedule | Blue Ridge Brawl | Spartan Robotics - Team 5724
   
   {% for day in site.data.brb_schedule %}
     <h2 class="sm-heading">
-      {{ day }}
+      {% comment %} day[0] gets the name of the file, which is the date {% endcomment %}
+      {{ day[0] }}
     </h2>
+
+    <table>
+      {% tablerow event in day %}
+        {{ event.time }}
+        {{ event.description }}
+      {% endtablerow %}
+    </table>
   {% endfor %}
 
 </main>

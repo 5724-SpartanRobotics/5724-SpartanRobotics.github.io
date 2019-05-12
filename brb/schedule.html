@@ -11,15 +11,20 @@ title: Schedule | Blue Ridge Brawl | Spartan Robotics - Team 5724
   {% for day in site.data.brb_schedule %}
     <h2 class="sm-heading">
       {% comment %} day[0] gets the name of the file, which is the date (must be YEAR-MONTH-DAY) {% endcomment %}
-      {{ day[0] }}
+      {% comment %} See https://learn.cloudcannon.com/jekyll/date-formatting/ for date formatting {% endcomment %}
+      {{ day[0] | date: "%A, %B %e, %Y" }}
     </h2>
 
     <table>
       {% comment %} day[1] gets the data from the file, which is the schedule {% endcomment %}
-      {% tablerow event in day[1] %}
-        {{ event.time }}
-        {{ event.description }}
-      {% endtablerow %}
+      <tbody>
+        {% for event in day[1] %}
+          <tr>
+            <td>{{ event.time }}</td>
+            </td>{{ event.description }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
     </table>
   {% endfor %}
 

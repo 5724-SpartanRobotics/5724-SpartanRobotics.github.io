@@ -106,6 +106,10 @@ main {
   }
 }
 
+#teamList, #teamList td, #teamList th {
+  border: 1px solid white;
+}
+
 .centered {
   align-items: center;
   text-align: center;

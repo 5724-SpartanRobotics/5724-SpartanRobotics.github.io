@@ -38,6 +38,13 @@
   li {
     list-style-type: none;  
   }
+  .menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
   ul.menu-nav,
   div.menu-branding {
     float: none;
@@ -147,11 +154,8 @@
     visibility: none;
   }
   .menu {
-    position: fixed;
+    position: relative;
     top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
     width: 100%;
     opacity: 0.9;
     visibility: visible;

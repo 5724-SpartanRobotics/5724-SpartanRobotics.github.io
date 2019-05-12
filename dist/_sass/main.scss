@@ -33,7 +33,7 @@ h3 {
   }
   &.sm-heading {
     margin-bottom: 2rem;
-    padding: 0.2rem 1rem;
+    padding: 0.2rem 1rem 0.2rem 0;
     background: rgba(lighten($primary-color, 2), $sm-background-opacity);
   }
 }
@@ -104,6 +104,29 @@ main {
       font-size: 1.5em;
     }
   }
+}
+
+#teamList {
+  border-collapse: collapse;
+}
+
+#teamList, #teamList td, #teamList th {
+  border: 1px solid white;
+}
+
+.centered {
+  align-items: center;
+  text-align: center;
+
+  table {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+table.centered {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .info {

@@ -33,7 +33,7 @@ h3 {
   }
   &.sm-heading {
     margin-bottom: 2rem;
-    padding: 0.2rem 1rem;
+    padding: 0.2rem 1rem 0.2rem 0;
     background: rgba(lighten($primary-color, 2), $sm-background-opacity);
   }
 }

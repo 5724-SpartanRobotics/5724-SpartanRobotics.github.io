@@ -1,0 +1,32 @@
+- name: Home
+  url: /
+- name: Team Information
+  url: /info
+- name: Gallery
+  url: /gallery
+  subitems:
+    - name: 2018-2019
+      url: /photos/2018-2019
+    - name: 2017-2018
+      url: /photos/2017-2018
+    - name: 2016-2017
+      url: /photos/2016-2017
+    - name: 2015 Season
+      url: /photos/2015-season
+- name: Team Calendar
+  url: /schedule
+- name: Blue Ridge Brawl
+  url: /brb
+  subitems:
+    - name: Directions
+      url: /brb/directions
+    - name: Register
+      url: /brb/register
+    - name: Schedule
+      url: /brb/schedule
+    - name: Team List
+      url: /brb/teamlist
+- name: Our Sponsors
+  url: /sponsors
+- name: Contact Us
+  url: /contact

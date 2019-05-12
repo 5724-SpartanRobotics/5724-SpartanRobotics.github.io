@@ -12,6 +12,12 @@
       <div class="portrait"></div>
     </div>
     <ul class="menu-nav">
+      {% for item in site.data.navigation %}
+        <li class="nav-item{% if item.url == page.url %} current{% endif %}">
+          <a href="{{ item.url }}" class="nav-link">{{ page.name }}</a>
+        </li>
+      {% endfor %}
+
       <li {% if page.url == "/" %}class="nav-item current"{% else %}class="nav-item"{% endif %}>
         <a href="/" class="nav-link">Home</a>
       </li>
@@ -24,7 +30,7 @@
       <li {% if page.url == "/schedule.html" %}class="nav-item current"{% else %}class="nav-item"{% endif %}>
         <a href="/schedule" class="nav-link">Team Calendar</a>
       </li>
-      <li {% if page.url == "/brb.html" %}class="nav-item current"{% else %}class="nav-item"{% endif %}>
+      <li {% if page.url == "/brb" %}class="nav-item current"{% else %}class="nav-item"{% endif %}>
         <a href="/brb" class="nav-link">Blue Ridge Brawl</a>
       </li>
       <li {% if page.url == "/sponsors.html" %}class="nav-item current"{% else %}class="nav-item"{% endif %}>

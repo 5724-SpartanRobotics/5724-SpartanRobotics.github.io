@@ -94,6 +94,10 @@
       @include text-stroke(1, white);
     }
   }
+  .nav-item-sub.current > a {
+    color: $secondary-color;
+    @include text-stroke(1, white);
+  }
   .nav-link {
     display: inline-block;
     position: relative;
@@ -103,7 +107,13 @@
     font-weight: 300;
     color: set-text-color($primary-color);
     @include easeOut;
-    &:hover {
+    
+    a {
+      color: set-text-color($primary-color);
+      @include easeOut;
+    }
+
+    &:hover, &:hover a {
       color: $secondary-color;
       @include text-stroke(1, white);
     }

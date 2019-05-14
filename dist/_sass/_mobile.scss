@@ -38,6 +38,13 @@
   li {
     list-style-type: none;  
   }
+  .menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
   ul.menu-nav,
   div.menu-branding {
     float: none;
@@ -46,18 +53,14 @@
       transform: translate3d(0, 0, 0);
     }
   }
-  .menu-nav-scroller {
-    max-height: 75vh;
-    overflow-y: auto;
-  }
   .menu-nav {
-    height: auto;
-    min-height: 75vh;
+    height: 75%;
+    overflow: auto;
     transform: translate3d(-100%, 0, 0);
     font-size: 24px;
   }
   .menu-branding {
-    height: 25vh;
+    height: 25%;
     transform: translate3d(100%, 0, 0);
     .portrait {
       width: 150px;
@@ -176,10 +179,14 @@
       float: left;
       transition: none;
       transform: none;
-      &.current > a {
+      &.current > a, &.current > span > a, &.current > span > span {
         color: $secondary-color;
         @include text-stroke(1, white);
       }
+    }
+    .nav-item-sub.current > a {
+      color: $secondary-color;
+      @include text-stroke(1, white);
     }
     .nav-link {
       display: block;
@@ -188,13 +195,18 @@
       font-size: 1.6em;
       font-weight: 300;
       color: set-text-color($primary-color);
-      &:hover {
+      &:hover, &:hover a {
         background-color: #111;
         color: $secondary-color;
         @include text-stroke(1, white);
       }
       transition: color 0.5s ease-out,
         text-shadow 0.5s ease-out;
+      
+      a {
+        transition: color 0.5s ease-out,
+          text-shadow 0.5s ease-out;
+      }
     }
   }
 

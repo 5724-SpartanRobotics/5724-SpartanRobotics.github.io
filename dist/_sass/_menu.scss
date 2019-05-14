@@ -115,7 +115,7 @@
 }
 
 // Delay each nav item slide by 0.05s
-@for $x from 1 through 6 {
+@for $x from 1 through $nav_menu_item_count {
   .nav-item:nth-child(#{$x}) {
     transition-delay: $x * 0.05s;
   }

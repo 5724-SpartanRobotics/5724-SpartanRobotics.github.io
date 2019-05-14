@@ -8,7 +8,9 @@ title: Schedule | Blue Ridge Brawl | Spartan Robotics - Team 5724
     Blue Ridge Brawl 2019 Preliminary Event Schedule
   </h1>
   
-  {% for day in site.data.brb.schedule %}
+  {% assign sorted_days = site.data.brb.schedule | sort %}
+
+  {% for day in sorted_days %}
     <h2 class="sm-heading">
       {% comment %} day[0] gets the name of the file, which is the date (must be YEAR-MONTH-DAY) {% endcomment %}
       {% comment %} See https://learn.cloudcannon.com/jekyll/date-formatting/ for date formatting {% endcomment %}

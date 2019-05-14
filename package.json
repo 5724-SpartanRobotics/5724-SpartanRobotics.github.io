@@ -1,20 +1,15 @@
 {
   "name": "spartan_robotics_website",
   "version": "1.0.0",
-  "description": "A website for the FIRST Robotics Competition team #5724, Spartan Robotics, based in Salem, Virginia.",
+  "description": "A website for the FIRST Robotics Competition team 5724, Spartan Robotics, based in Salem, Virginia.",
   "main": "index.js",
-  "homepage": "https://MatthewSowder.github.io/SPARTAN-ROBOTICS-WEBSITE",
+  "homepage": "https://www.shsrobotics.us",
   "scripts": {
-    "sass": "node-sass -w scss/ -o dist/css/ --recursive --output-style compressed",
     "deploy": "gh-pages -d dist -b master"
   },
-  "author": "Matthew Trent Christley Sowder",
+  "author": "Spartan Robotics 5724",
   "license": "MIT",
   "dependencies": {
-    "gh-pages": "^1.2.0",
-    "node-sass": "^4.9.3"
-  },
-  "devDependencies": {
-    "sass-text-stroke": "^1.0.1"
+    "gh-pages": "^1.2.0"
   }
 }

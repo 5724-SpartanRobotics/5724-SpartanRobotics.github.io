@@ -1,2 +1,5 @@
 collections:
   - upcoming_events
+
+plugins:
+  - jekyll-sitemap

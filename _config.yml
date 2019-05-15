@@ -3,3 +3,7 @@ collections:
 
 plugins:
   - jekyll-sitemap
+
+defaults:
+  -
+    title_suffix: " | Spartan Robotics - Team 5724"

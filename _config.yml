@@ -6,4 +6,7 @@ plugins:
 
 defaults:
   -
-    title_suffix: " | Spartan Robotics - Team 5724"
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      title_suffix: " | Spartan Robotics - Team 5724"

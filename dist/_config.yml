@@ -3,3 +3,10 @@ collections:
 
 plugins:
   - jekyll-sitemap
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      title_suffix: " | Spartan Robotics - Team 5724"

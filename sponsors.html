@@ -20,13 +20,10 @@ title: Our Sponsors
         <img src="/assets/img/sponsors/{{ sponsor.logo }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}">
         
         <a href="{{ sponsor.website }}" target="_blank" class="btn-light">
-          <i class="fas fa-eye"></i> Visit Site
+          {{ sponsor.name }} <i class="fas fa-external-link-alt"></i>
         </a>
       </div>
     {% endfor %}
 
   </div>
-
-  <!-- Sponsors that don't have logos. -->
-  <p>We would also like to thank our sponsors Eagle American LLC and B&amp;B Fasteners! Thank you for your support!</p>
 </main>

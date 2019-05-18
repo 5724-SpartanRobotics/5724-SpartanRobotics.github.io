@@ -22,9 +22,10 @@
             <span class="nav-link nav-link-expandable">
               <a href="{{ item.url }}">
                 {{ item.name }}
-                  {% if item.external %}
-                    <i class="fas fa-external-link-alt"></i>
-                  {% endif %}
+                {{ item.external }}
+                {% if item.external %}
+                  <i class="fas fa-external-link-alt"></i>
+                {% endif %}
               </a>
               
               <span class="nav-down-arrow"><i class="fas fa-caret-down"></i></span>

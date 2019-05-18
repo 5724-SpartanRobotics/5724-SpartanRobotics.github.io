@@ -20,14 +20,9 @@
         <li class="nav-item{% if item.url == page.url or item.url == pagepath[0] %} current{% endif %}">
           {% if item.subitems[0] %}
             <span class="nav-link nav-link-expandable">
-              {% if item.external %}
-                <a href="{{ item.url }}" target="_blank">
-                  {{ item.name }}
-                    <i class="fas fa-external-link-alt"></i>
-                </a>
-              {% else %}
-                <a href="{{ item.url }}">{{ item.name }}</a>
-              {% endif %}
+              <a href="{{ item.url }}">
+                {{ item.name }}
+              </a>
               
               <span class="nav-down-arrow"><i class="fas fa-caret-down"></i></span>
             </span>
@@ -37,25 +32,23 @@
                 {% assign withHTML = subitem.url | append: '.html' %}
                 
                 <li class="nav-item-sub{% if subitem.url == page.url or withHTML == page.url %} current{% endif %}">
-                  <a href="{{ subitem.url }}" class="nav-link">
-                    {{ subitem.name }}
-                    {% if subitem.external %}
-                      <i class="fas fa-external-link-alt"></i>
-                    {% endif %}
-                  </a>
+                  <a href="{{ subitem.url }}" class="nav-link">{{ subitem.name }}</a>
                 </li>
               {% endfor %}
             </ul>
           {% else %}
-            <span class="nav-link nav-link-expandable">
-              {% if item.external %}
-                <a href="{{ item.url }}" class="nav-link" target="_blank">
-                  {{ item.name }}
-                    <i class="fas fa-external-link-alt"></i>
-                </a>
-              {% else %}
-                <a href="{{ item.url }}" class="nav-link" >{{ item.name }}</a>
-              {% endif %}
+            
+            {% if item.external %}
+              <a href="{{ item.url }}" class="nav-link" target="_blank">
+                {{ item.name }}
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            {% else %}
+              <a href="{{ item.url }}" class="nav-link">
+                {{ item.name }}
+              </a>
+            {% endif %}
+
           {% endif %}
         </li>
       {% endfor %}

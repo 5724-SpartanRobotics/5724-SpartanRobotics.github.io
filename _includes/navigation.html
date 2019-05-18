@@ -20,13 +20,14 @@
         <li class="nav-item{% if item.url == page.url or item.url == pagepath[0] %} current{% endif %}">
           {% if item.subitems[0] %}
             <span class="nav-link nav-link-expandable">
-              <a href="{{ item.url }}">
-                {{ item.name }}
-                {{ item.external }}
-                {% if item.external %}
-                  <i class="fas fa-external-link-alt"></i>
-                {% endif %}
-              </a>
+              {% if item.external %}
+                <a href="{{ item.url }}" target="_blank">
+                  {{ item.name }}
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+              {% else %}
+                <a href="{{ item.url }}">{{ item.name }}</a>
+              {% endif %}
               
               <span class="nav-down-arrow"><i class="fas fa-caret-down"></i></span>
             </span>
@@ -46,9 +47,15 @@
               {% endfor %}
             </ul>
           {% else %}
-            <a href="{{ item.url }}" class="nav-link">
-              {{ item.name }}
-            </a>
+            <span class="nav-link nav-link-expandable">
+              {% if item.external %}
+                <a href="{{ item.url }}" class="nav-link" target="_blank">
+                  {{ item.name }}
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+              {% else %}
+                <a href="{{ item.url }}" class="nav-link" >{{ item.name }}</a>
+              {% endif %}
           {% endif %}
         </li>
       {% endfor %}

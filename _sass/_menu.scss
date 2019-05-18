@@ -120,6 +120,12 @@
   }
 }
 
+.menu-sublist {
+  list-style-type: none;
+  background: darken($primary-color, 5);
+  padding-left: 0;
+}
+
 .nav-item:nth-last-child(1) .nav-link {
   padding-bottom: 1rem;
 }

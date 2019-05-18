@@ -13,7 +13,7 @@
   .menu-sublist {
     list-style-type: none;
     position: fixed;
-    background-color: $primary-color;
+    background: darken($primary-color, 5);
     padding-left: 0;
   }
 }
@@ -33,7 +33,7 @@
   .menu-sublist {
     list-style-type: none;
     position: fixed;
-    background-color: $primary-color;
+    background: darken($primary-color, 5);
     padding-left: 0;
   }
 }

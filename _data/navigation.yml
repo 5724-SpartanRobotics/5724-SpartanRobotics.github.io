@@ -26,7 +26,12 @@
       url: /brb/schedule.html
     - name: Team List
       url: /brb/teamlist.html
+    - name: Volunteer Registration
+      url: /brb/registervolunteer.html
 - name: Our Sponsors
   url: /sponsors.html
 - name: Contact Us
   url: /contact.html
+- name: Team Gear
+  url: http://fuzzypickletshirts.com/spartanrobotics/shop/home
+  external: true

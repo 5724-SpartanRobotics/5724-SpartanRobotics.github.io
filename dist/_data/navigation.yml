@@ -1,32 +1,37 @@
 - name: Home
   url: /
 - name: Team Information
-  url: /info
+  url: /info.html
 - name: Gallery
   url: /gallery
   subitems:
     - name: 2018-2019
-      url: /gallery/2018-2019
+      url: /gallery/2018-2019.html
     - name: 2017-2018
-      url: /gallery/2017-2018
+      url: /gallery/2017-2018.html
     - name: 2016-2017
-      url: /gallery/2016-2017
+      url: /gallery/2016-2017.html
     - name: 2015 Season
-      url: /gallery/2015-season
+      url: /gallery/2015-season.html
 - name: Team Calendar
-  url: /schedule
+  url: /schedule.html
 - name: Blue Ridge Brawl
   url: /brb
   subitems:
     - name: Directions
-      url: /brb/directions
+      url: /brb/directions.html
     - name: Register
-      url: /brb/register
+      url: /brb/register.html
     - name: Schedule
-      url: /brb/schedule
+      url: /brb/schedule.html
     - name: Team List
-      url: /brb/teamlist
+      url: /brb/teamlist.html
+    - name: Volunteer Registration
+      url: /brb/registervolunteer.html
 - name: Our Sponsors
-  url: /sponsors
+  url: /sponsors.html
 - name: Contact Us
-  url: /contact
+  url: /contact.html
+- name: Team Gear
+  url: http://fuzzypickletshirts.com/spartanrobotics/shop/home
+  external: true

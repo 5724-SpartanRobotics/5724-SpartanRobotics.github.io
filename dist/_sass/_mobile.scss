@@ -9,6 +9,10 @@
   .projects {
     grid-template-columns: repeat(4, 1fr);
   }
+  
+  .menu-sublist {
+    position: fixed;
+  }
 }
 
 // Desktops & Laptops
@@ -21,6 +25,11 @@
   }
   .projects {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .menu-sublist {
+    position: fixed;
+    z-index: 1;
   }
 }
 

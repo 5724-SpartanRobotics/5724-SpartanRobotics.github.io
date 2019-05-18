@@ -37,9 +37,18 @@
               {% endfor %}
             </ul>
           {% else %}
-            <a href="{{ item.url }}" class="nav-link">
-              {{ item.name }}
-            </a>
+            
+            {% if item.external %}
+              <a href="{{ item.url }}" class="nav-link" target="_blank">
+                {{ item.name }}
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            {% else %}
+              <a href="{{ item.url }}" class="nav-link">
+                {{ item.name }}
+              </a>
+            {% endif %}
+
           {% endif %}
         </li>
       {% endfor %}

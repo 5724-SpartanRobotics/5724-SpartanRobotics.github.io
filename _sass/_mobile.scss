@@ -9,6 +9,13 @@
   .projects {
     grid-template-columns: repeat(4, 1fr);
   }
+  
+  .menu-sublist {
+    list-style-type: none;
+    position: fixed;
+    background-color: $primary-color;
+    padding-left: 0;
+  }
 }
 
 // Desktops & Laptops
@@ -22,7 +29,7 @@
   .projects {
     grid-template-columns: repeat(3, 1fr);
   }
-  
+
   .menu-sublist {
     list-style-type: none;
     position: fixed;

@@ -1,6 +1,6 @@
 - name: Home
   url: /
-- name: Team Information
+- name: About
   url: /info.html
 - name: Gallery
   url: /gallery

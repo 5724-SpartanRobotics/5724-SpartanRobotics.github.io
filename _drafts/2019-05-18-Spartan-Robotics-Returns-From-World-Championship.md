@@ -1,3 +1,3 @@
 ---
-title: Spartan Robotics - FRC World Championship
+title: "Spartan Robotics - FRC World Championship"
 ---

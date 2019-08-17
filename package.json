@@ -10,6 +10,6 @@
   "author": "Spartan Robotics 5724",
   "license": "MIT",
   "dependencies": {
-    "gh-pages": "^1.2.0"
+    "gh-pages": "^2.1.1"
   }
 }

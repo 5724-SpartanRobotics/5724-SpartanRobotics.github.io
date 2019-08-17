@@ -1,0 +1,71 @@
+<div class="schedule" id="upcomingEvents">
+    <!-- The plus 0 is necessary to make sure it knows is a number instead of text -->
+    {% assign currentTime = 'now' | date: '%s' | plus: 0 %}
+
+    {% comment %}
+        Skip events that have already happened, but we still have to check in javascript
+        because Jekyll only runs to rebuild the list when changes are made to the site.
+        This converts the date (or end date, if there is one) of the event to seconds,
+        adds 172800 seconds (2 days), and stores it in a variable called expireTime. It
+        then does not add the event if the expireTime is less than the current time (or in
+        other words, the expireTime has already passed). This makes sure that whenever
+        the page is rebuilt, only events that are within two days of the beginning of
+        their end date will show up.
+    {% endcomment %}
+
+    {% for event in site.upcoming_events %}
+
+        {% if event.end_date %}
+            {% assign expireTime = event.end_date | date: "%s" | plus: 172800 %}
+        {% else %}
+            {% assign expireTime = event.date | date: "%s" | plus: 172800 %}
+        {% endif %}
+
+        {% if expireTime > currentTime %}
+
+            <div class="event" data-expire-time="{{ expireTime }}">
+                <h3>
+                    {{ event.title }}
+                    -
+                    {{ event.date | date: "%A" }},
+                    {{ event.date | date_to_long_string: "ordinal", "US" }}
+                    <!-- If there is an end date specified, include it in the title -->
+                    {% if event.end_date %}
+                    to
+                    {{ event.end_date | date: "%A" }},
+                    {{ event.end_date | date_to_long_string: "ordinal", "US" }}
+                    {% endif %}
+                </h3>
+                <p>
+                    {{ event.content }}
+                </p>
+            </div>
+
+        {% endif %}
+
+    {% endfor %}
+
+</div>
+
+<script>
+    // See comment in above section. This hides events that have passed if they have
+    // not yet been removed by a site rebuild (which only occurs when a change is made).
+    var events = document.getElementsByClassName("event");
+
+    var hiddenCount = 0;
+
+    for (var i = 0; i < events.length; i++) {
+        // Date.now() is in milliseconds, but expireTime is in seconds, so
+        // divide Date.now() by 1000
+        if (parseInt(events[i].dataset.expireTime) < Date.now() / 1000) {
+            events[i].hidden = true;
+            hiddenCount++;
+        }
+    }
+
+    if (hiddenCount == events.length || events.length == 0) {
+        var noneFound = document.createElement("p");
+        noneFound.innerText = "No upcoming events found.";
+        document.getElementById("upcomingEvents").appendChild(noneFound);
+    }
+</script>

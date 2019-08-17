@@ -53,8 +53,6 @@
 
 .nav-item:nth-child(7) { transition-delay: 0.35s; }
 
-.nav-item:nth-child(8) { transition-delay: 0.4s; }
-
 .img-block { display: grid; gap: 25px; grid-template-columns: repeat(3, 1fr); }
 .img-block p { text-align: center; font-size: 1.5em; }
 .img-block img { width: 100%; height: auto; }

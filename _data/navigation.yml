@@ -2,17 +2,6 @@
   url: /
 - name: About
   url: /info.html
-- name: Gallery
-  url: /gallery
-  subitems:
-    - name: 2018-2019
-      url: /gallery/2018-2019.html
-    - name: 2017-2018
-      url: /gallery/2017-2018.html
-    - name: 2016-2017
-      url: /gallery/2016-2017.html
-    - name: 2015 Season
-      url: /gallery/2015-season.html
 - name: Team Calendar
   url: /schedule.html
 - name: Blue Ridge Brawl

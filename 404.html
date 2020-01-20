@@ -10,13 +10,33 @@ title: 404 Not Found
     <br />
     <span>Here are some pages that you might be looking for:</span>
     <ul>
-        <li><a class="link" href="/index">Home</a></li>
-        <li><a class="link" href="/brb">Blue Ridge Brawl</a></li>
-        <li><a class="link" href="/schedule">Team Calendar</a></li>
-        <li><a class="link" href="/info">Team Information</a></li>
-        <li><a class="link" href="/gallery">Gallery</a></li>
-        <li><a class="link" href="/sponsors">Our Sponsors</a></li>
-        <li><a class="link" href="/contact">Contact Us</a></li>
+      {% for item in site.data.navigation %}
+        {% assign stuff = page.url | downcase | split: '/' %}
+        {% assign pagepath =  stuff[1] | prepend: '/' | split: '.' %}
+        
+        <li>
+            {% if item.external %}
+                <a href="{{ item.url }}" class="link" target="_blank">
+                    {{ item.name }}
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+            {% else %}
+                <a href="{{ item.url }}" class="link">
+                    {{ item.name }}
+                </a>
+            {% endif %}
+
+            <ul>
+                {% for subitem in item.subitems %}
+                    {% assign withHTML = subitem.url | append: '.html' %}
+                    
+                    <li>
+                        <a href="{{ subitem.url }}" class="link">{{ subitem.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </li>
+      {% endfor %}
     </ul>
     <script>
         var loc = window.location;

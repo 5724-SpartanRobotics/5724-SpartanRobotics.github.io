@@ -4,6 +4,8 @@
   url: /info.html
 - name: Team Calendar
   url: /schedule.html
+- name: 2020 Summer Camp
+  url: /2020summercamp
 - name: Blue Ridge Brawl
   url: /brb
   subitems:

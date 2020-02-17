@@ -16,9 +16,9 @@
     - name: Schedule
       url: /brb/schedule.html
     - name: Team List
-      url: /brb/teamlist.html
+      url: /brb/teams.html
     - name: Volunteer Registration
-      url: /brb/registervolunteer.html
+      url: /brb/volunteer.html
 - name: Our Sponsors
   url: /sponsors.html
 - name: Contact Us

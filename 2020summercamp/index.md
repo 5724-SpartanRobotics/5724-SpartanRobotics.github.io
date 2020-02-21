@@ -29,42 +29,42 @@ Please email Randy Brinkley at <a class="link" href="mailto:rbrinkley@salem.k12.
 
 ## Morning session - 9 a.m. to noon 
 
-| Camp Name                  |  Grade Levels  | Price | Number of Campers |
-|----------------------------|:--------------:|:-----:|:-----------------:|
-| EV3 Robotics 1 (Brinkley)  | Rising 4th-6th | $75   | 20                |
-| Girls Who Code (Gerrol)    | Rising 4th-6th | $75   | 20                |
-| Cyber Defense (Preston)    | Rising 4th-6th | $75   | 20                |
-| Kid Wind (Grimshaw)        | Rising 4th-6th | $75   | 20                |
-| Intro to Program(Graybill) | Rising 4th-6th | $75   | 20                |
+| Camp Name                   |  Grade Levels  | Price | Number of Campers |
+|-----------------------------|:--------------:|:-----:|:-----------------:|
+| EV3 Robotics 1 (Brinkley)   | Rising 4th-6th | $75   | 20                |
+| Girls Who Code (Gerrol)     | Rising 4th-6th | $75   | 20                |
+| White Hat Hacking (Preston) | Rising 4th-6th | $75   | 20                |
+| Kid Wind (Grimshaw)         | Rising 4th-6th | $75   | 20                |
+| Intro to Program(Graybill)  | Rising 4th-6th | $75   | 20                |
 
 <br>
 
 ## Afternoon session - 1 to 4 p.m.
 
-| Camp Name                   |  Grade Levels  | Price | Number of Campers |
-|-----------------------------|:--------------:|:-----:|:-----------------:|
-| Vex Robotics 1 (Brinkley)   | Rising 4th-6th | $75   | 20                |
-| Girls Who Code (Gerrol)     | Rising 4th-6th | $75   | 20                |
-| Cyber Defense (Preston)     | Rising 4th-6th | $75   | 20                |
-| Kid Wind (Grimshaw)         | Rising 4th-6th | $75   | 20                |
-| Basics of Program(Graybill) | Rising 4th-6th | $75   | 20                |
+| Camp Name                    |  Grade Levels  | Price | Number of Campers |
+|------------------------------|:--------------:|:-----:|:-----------------:|
+| Vex Robotics 1 (Brinkley)    | Rising 4th-6th | $75   | 20                |
+| Girls Who Code (Gerrol)      | Rising 4th-6th | $75   | 20                |
+| White Hat Hacking (Preston)  | Rising 4th-6th | $75   | 20                |
+| Kid Wind (Grimshaw)          | Rising 4th-6th | $75   | 20                |
+| Basics of Program(Graybill)  | Rising 4th-6th | $75   | 20                |
 
 <br>
 <br>
 
-### LEGO (EV3) ROBOTICS -
+### LEGO (EV3) Robotics -
 
 Campers who participate in the LEGO (EV3) summer camp have the opportunity to design, build and program robots using the fantastic EV3 LEGO robotics system. This camp is for beginners and will focus on the basics of robotics and programming. At the end of the week, campers will participate in a tournament to showcase what they have learned and accomplished during their week at camp.
 
 
-### VEX ROBOTICS - 
+### Vex Robotics -
 
 Campers who participate in the Vex Robotics summer camp have the opportunity to design, build and program robots using the powerful Vex robotics system. This camp is for beginners and will focus on the basics of robotics and programming. At the end of the week, campers will participate in a tournament to showcase what they have learned and accomplished during their week at camp.
 
 
-### CYBER DEFENSE -
+### White Hat Hacking -
 
-Campers who participate in the Cyber Defense summer camp will learn about internet and computer security, how to secure a network, and how to defend themselves from cyber attacks. Campers are placed in the position of newly hired IT professionals tasked with managing the network of a small company. Students are given a set of virtual images that represent operating systems and are tasked with finding cyber security vulnerabilities within the images and hardening the system while maintaining critical services.
+Campers who participate in the White Hat Hacking camp will learn about internet and computer security, how to secure a network, and how to defend themselves against cyber attacks. Campers are placed in the position of a newly hired Crime Scene Investigator tasked to solve cybercrimes and learn what it takes to maintain and defend their organization against hackers.
 
 
 ### Girls Who Code - 

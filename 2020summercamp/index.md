@@ -4,6 +4,17 @@ title: 2020 Summer Camp
 description: Spartan Robotics 2020 Summer Camp information and registration.
 ---
 
+<h1>
+    Unfortunately, because of the Pandemic, the Spartan Robotics 2020 Summer
+    Camp has been cancelled. If you had already registered, you should
+    have received a communication from Randy Brinkley
+    (rbrinkley@salem.k12.va.us) about the cancellation.
+</h1>
+
+<!-- THE 2020 SUMMER CAMP HAS BEEN CANCELLED, BUT YOU (FUTURE WEBSITE
+    MANAGER/PROGRAMMER) MAY BE ABLE TO REUSE SOME OF THE COMMENTED PAGE BELOW.
+    JUST REMOVE THE <!-- AT THE BEGINNING AND THE -- > AT THE END AND THEN
+    UPDATE EVERYTHING FOR WHAT IT NEEDS IN 2021.
 
 <section class="section centered">
     <h1>
@@ -85,3 +96,5 @@ Learn the basics of coding with fun hands-on and computer based learning.  We wi
 ### Basics of Programming - 
 
 Basics of Programming will build on the Intro to Programming option and will take a deeper dive into programming with a choose your own adventure model: learning game design with Gamechangineer, looping and conditionals in Scratch, Create a CS First Animation project or introduction to text based coding. This option pairs well with the Intro to Programming option for motivated campers and can be a great choice for campers with prior coding experience/high motivation.
+
+END COMMENT (TODO: DON'T FORGET TO DELETE THIS LINE TOO)-->

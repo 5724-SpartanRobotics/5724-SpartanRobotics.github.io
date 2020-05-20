@@ -6,9 +6,14 @@ description: 'Event schedule For the Blue Ridge Brawl in Salem, Virginia'
 
 <main class="centered">
   <h1 class="sm-heading">
-    Blue Ridge Brawl 2019 Event Schedule
+    Blue Ridge Brawl Event Schedule
   </h1>
   
+  <h1>Unfortunately, due to the Pandemic, the Blue Ridge Brawl (along will all
+    offseason FIRST events) is cancelled for 2020. It is planned to occur again
+    in 2021.</h1>
+  <!--TODO (post-Pandemic): Uncomment and update below
+  {% comment %} Loop through all files in _data/brb/schedule {% endcomment %}
   {% assign sorted_days = site.data.brb.schedule | sort %}
 
   {% for day in sorted_days %}
@@ -21,6 +26,7 @@ description: 'Event schedule For the Blue Ridge Brawl in Salem, Virginia'
     <table>
       {% comment %} day[1] gets the data from the file, which is the schedule {% endcomment %}
       <tbody>
+        {% comment %} Loop through the parts of the schedule {% endcomment %}
         {% for event in day[1] %}
           <tr>
             <td>{{ event.time }}</td>
@@ -32,5 +38,5 @@ description: 'Event schedule For the Blue Ridge Brawl in Salem, Virginia'
     <br />
     <br />
   {% endfor %}
-
+--
 </main>

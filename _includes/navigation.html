@@ -1,57 +1,59 @@
 <header>
-  <!-- Menu button -->
-  <div class="menu-btn">
-    <div class="btn-line"></div>
-    <div class="btn-line"></div>
-    <div class="btn-line"></div>
-  </div>
 
-  <!-- Menu open -->
-  <nav class="menu">
-    <div class="menu-branding">
-      <div class="portrait"></div>
-    </div>
-    <ul class="menu-nav">
-      {% for item in site.data.navigation %}
+  <nav class="navbar" data-function="navbar">
+    <button class="navbar-toggle">
+      <div class="menu-button">
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+      </div>
+    </button>
 
-        {% assign stuff = page.url | downcase | split: '/' %}
-        {% assign pagepath =  stuff[1] | prepend: '/' | split: '.' %}
-        
-        <li class="nav-item{% if item.url == page.url or item.url == pagepath[0] %} current{% endif %}">
-          {% if item.subitems[0] %}
-            <span class="nav-link nav-link-expandable">
+    <div>
+      <div class="nav-branding">
+        <div class="portrait"></div>
+      </div>
+
+      <ul class="nav">
+        {% for item in site.data.navigation %}
+
+          {% assign stuff = page.url | downcase | split: '/' %}
+          {% assign pagepath = stuff[1] | prepend: '/' | split: '.' %}
+
+          <li class="{% if item.url == page.url or item.url == pagepath[0] %}active{% endif %}">
+            {% if item.subitems[0] %}
               <a href="{{ item.url }}">
-                {{ item.name }}
+                {{ item.name }}&nbsp;
+                <span class="parent-icon"><i class="fas fa-caret-down"></i></span>
+                <span class="parent-toggle"><i class="fas fa-caret-down"></i></span>
               </a>
-              
-              <span class="nav-down-arrow"><i class="fas fa-caret-down"></i></span>
-            </span>
-            
-            <ul hidden class="menu-sublist">
-              {% for subitem in item.subitems %}
-                {% assign withHTML = subitem.url | append: '.html' %}
-                
-                <li class="nav-item-sub{% if subitem.url == page.url or withHTML == page.url %} current{% endif %}">
-                  <a href="{{ subitem.url }}" class="nav-link">{{ subitem.name }}</a>
-                </li>
-              {% endfor %}
-            </ul>
-          {% else %}
-            
-            {% if item.external %}
-              <a href="{{ item.url }}" class="nav-link" target="_blank">
-                {{ item.name }}
-                <i class="fas fa-external-link-alt"></i>
-              </a>
-            {% else %}
-              <a href="{{ item.url }}" class="nav-link">
-                {{ item.name }}
-              </a>
-            {% endif %}
 
-          {% endif %}
-        </li>
-      {% endfor %}
-    </ul>
+              <ul class="subnav">
+                {% for subitem in item.subitems %}
+                  {% assign withHTML = subitem.url | append: '.html' %}
+
+                  <li class="{% if subitem.url == page.url or withHTML == page.url %}active{% endif %}">
+                    <a href="{{ subitem.url }}">{{ subitem.name }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+
+              {% if item.external %}
+                <a href="{{ item.url }}" target="_blank">
+                  {{ item.name }}&nbsp;
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              {% else %}
+                <a href="{{ item.url }}">
+                  {{ item.name }}
+                </a>
+              {% endif %}
+
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
   </nav>
 </header>

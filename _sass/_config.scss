@@ -41,6 +41,12 @@ $sm-background-opacity: 0.3;
   }
 }
 
+@mixin mediaDesktop {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
 // Media query mixins
 @mixin mediaSm {
   @media screen and (max-width: 500px) {

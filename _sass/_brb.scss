@@ -1,0 +1,3 @@
+.brb-main {
+    @include backgrounded-main($brb-logo-image, 10rem, 15rem);
+}

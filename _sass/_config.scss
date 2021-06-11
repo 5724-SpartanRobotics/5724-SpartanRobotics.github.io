@@ -2,11 +2,45 @@ $primary-color: #444;
 $secondary-color: #900000;
 $show-home-image: true;
 $home-image: url(/assets/img/background.jpg);
+$brb-logo-image: url(/assets/img/brb/background.jpg);
 $background-opacity: 0.5;
 $sm-background-opacity: 0.3;
 
 @mixin easeOut {
   transition: all 0.5s ease-out;
+}
+
+@mixin backgrounded-main($image, $logo-width, $height) {
+  background: $image;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: $height;
+  padding: 3rem;
+
+  img.logo {
+    width: 100%;
+  }
+
+  .header-content {
+    text-align: center;
+    line-height: 1.25;
+  }
+
+  @include mediaDesktop {
+    img.logo {
+      max-height: $height;
+      width: $logo-width;
+      box-sizing: border-box;
+      position: absolute;
+    }
+
+    .header-content {
+      text-align: left;
+      line-height: 1.5;
+      margin-left: $logo-width;
+      padding-left: 3rem;
+    }
+  }
 }
 
 @mixin background {

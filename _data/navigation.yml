@@ -24,6 +24,7 @@
   url: /sponsors.html
 - name: Contact Us
   url: /contact.html
-- name: Team Gear
-  url: http://fuzzypickletshirts.com/spartanrobotics/shop/home
-  external: true
+# This will be updated soon
+#- name: Team Gear
+#  url: http://fuzzypickletshirts.com/spartanrobotics/shop/home
+#  external: true

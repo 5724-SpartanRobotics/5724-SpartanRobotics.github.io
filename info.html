@@ -28,7 +28,14 @@ description: 'FRC 5724 Spartan Robotics team information.'
       <h3>
         Our Vision
       </h3>
-      <p>Building onto this fourth year robotics team, we wish to expand in participation and membership. Gaining people with
+      <p>Building onto this 
+        {% comment %}
+          Automatically update the age of the team. Whenever someone updates the
+          website, a rebuild will be triggered and this will update.
+        {% endcomment %}
+        {% assign age = 'now' | date: "%Y" | minus: 2014 %}
+        {% include ordinal.html num=age %}
+        year robotics team, we wish to expand in participation and membership. Gaining people with
         multifaceted abilities is such a important part of our academic and athletic foundation, as our school consists
         of high standards of athleticism. We also wish to prepare our members for their future careers with the skills
         they'll gain while working on the team. We hope to make this team a permanent part of the Spartan family.</p>
@@ -76,7 +83,7 @@ description: 'FRC 5724 Spartan Robotics team information.'
       <p> We started Spartan Robotics in 2015, so the 2019 season will be our fifth year of competing in the <i>FIRST</i>
         Robotics Competition. In our first year we made a decent robot, but now we are making the best, most expensive robot that
         our team has ever made. We have grown so much from having just 6 members to having almost 30 members! Last year, for the
-        first time in our team’s history, we became an alliance captain in one of our competitions. We have also been in the Salem
+        first time in our team's history, we became an alliance captain in one of our competitions. We have also been in the Salem
         Christmas Parade twice. We will continue to grow in our abilities as more people with diverse interests join throughout
         the years.</p>
     </div>

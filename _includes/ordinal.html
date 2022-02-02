@@ -1,0 +1,11 @@
+{% comment %}
+  Formats a number as an ordinal number (i.e., 1 becomes 1st, 2 becomes 2nd, etc.)
+{% endcomment %}
+
+{% assign first_digit = include.num | modulo: 10 %}
+{% case first_digit %}
+  {% when 1 %}{{ include.num }}st
+  {% when 2 %}{{ include.num }}nd
+  {% when 3 %}{{ include.num }}rd
+  {% else %}{{ include.num }}th
+{% endcase %}

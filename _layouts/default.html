@@ -13,7 +13,7 @@
   {{ content }}
 
   <footer id="main-footer">
-    Copyright &copy; 2021 Spartan Robotics. All rights reserved.
+    Copyright &copy; {{ 'now' | date: "%Y" }} Spartan Robotics. All rights reserved.
   </footer>
   
   {% unless page.no-nav %}

@@ -9,17 +9,17 @@
 #  url: /2020summercamp
 - name: Blue Ridge Brawl
   url: /brb
-  subitems:
-    - name: Directions
-      url: /brb/directions.html
-    - name: Register
-      url: /brb/register.html
-    - name: Schedule
-      url: /brb/schedule.html
-    - name: Team List
-      url: /brb/teams.html
-    - name: Volunteer Registration
-      url: /brb/volunteer.html
+#  subitems:
+#    - name: Directions
+#      url: /brb/directions.html
+#    - name: Register
+#      url: /brb/register.html
+#    - name: Schedule
+#      url: /brb/schedule.html
+#    - name: Team List
+#      url: /brb/teams.html
+#    - name: Volunteer Registration
+#      url: /brb/volunteer.html
 - name: Our Sponsors
   url: /sponsors.html
 - name: Contact Us

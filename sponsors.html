@@ -20,9 +20,17 @@ descrption: 'Spartan Robotics FRC 5724 would like to thank all of our gracious s
       <div class="item">
         <img src="/assets/img/sponsors/{{ sponsor.logo }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}">
         
-        <a href="{{ sponsor.website }}" target="_blank" class="btn-light">
-          {{ sponsor.name }} <i class="fas fa-external-link-alt"></i>
-        </a>
+        {% assign site_stripped = sponsor.website | strip_newlines %}
+        {% if site_stripped == "" %}
+          <a href="#" class="btn-light">
+            {{ sponsor.name }}
+          </a>
+        {% else %}
+          <a href="{{ sponsor.website }}" target="_blank" class="btn-light">
+            {{ sponsor.name }}
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+        {% endif %}
       </div>
     {% endfor %}
 

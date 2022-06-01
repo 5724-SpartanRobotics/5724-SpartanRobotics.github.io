@@ -1,59 +1,62 @@
 <header>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" id="navExpandButton" data-bs-target="#mainNavbar">
+        <span class="navbar-toggler-icon">
+          <i class="fa fa-bars"></i>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav">
+          {% for item in site.data.navigation %}
 
-  <nav class="navbar" data-function="navbar">
-    <button class="navbar-toggle">
-      <div class="menu-button">
-        <div class="btn-line"></div>
-        <div class="btn-line"></div>
-        <div class="btn-line"></div>
-      </div>
-    </button>
+            {% assign stuff = page.url | downcase | split: '/' %}
+            {% assign pagepath = stuff[1] | prepend: '/' | split: '.' %}
 
-    <div>
-      <div class="nav-branding">
-        <div class="portrait"></div>
-      </div>
-
-      <ul class="nav">
-        {% for item in site.data.navigation %}
-
-          {% assign stuff = page.url | downcase | split: '/' %}
-          {% assign pagepath = stuff[1] | prepend: '/' | split: '.' %}
-
-          <li class="{% if item.url == page.url or item.url == pagepath[0] %}active{% endif %}">
             {% if item.subitems[0] %}
-              <a href="{{ item.url }}">
-                {{ item.name }}&nbsp;
-                <span class="parent-icon"><i class="fas fa-caret-down"></i></span>
-                <span class="parent-toggle"><i class="fas fa-caret-down"></i></span>
-              </a>
 
-              <ul class="subnav">
-                {% for subitem in item.subitems %}
-                  {% assign withHTML = subitem.url | append: '.html' %}
+              <li class="nav-item dropdown linked-dropdown">
+                <a class="nav-link link-text {% if item.url == page.url or item.url == pagepath[0] %}active{% endif %}"
+                  href="{{ item.url }}">{{ item.name }}</a>
+                <a class="nav-link dropdown-toggle dropdown-toggle-spartan {% if item.url == page.url or item.url == pagepath[0] %}active{% endif %}"
+                  role="button" href="#"></a>
 
-                  <li class="{% if subitem.url == page.url or withHTML == page.url %}active{% endif %}">
-                    <a href="{{ subitem.url }}">{{ subitem.name }}</a>
-                  </li>
-                {% endfor %}
-              </ul>
+                <ul class="dropdown-menu">
+                  {% for subitem in item.subitems %}
+                    {% assign withHTML = subitem.url | append: '.html' %}
+
+                    <li>
+                      <a href="{{ subitem.url }}"
+                        class="dropdown-item nav-link {% if subitem.url == page.url or withHTML == page.url %}active{% endif %}">
+                        {{ subitem.name }}
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </li>
+
             {% else %}
 
               {% if item.external %}
-                <a href="{{ item.url }}" target="_blank">
-                  {{ item.name }}&nbsp;
-                  <i class="fas fa-external-link-alt"></i>
-                </a>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ item.url }}" target="_blank">
+                    {{ item.name }}&nbsp;
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </li>
               {% else %}
-                <a href="{{ item.url }}">
-                  {{ item.name }}
-                </a>
+                <li class="nav-item">
+                  <a class="nav-link {% if item.url == page.url %}active{% endif %}" href="{{ item.url }}">
+                    {{ item.name }}
+                  </a>
+                </li>
               {% endif %}
 
             {% endif %}
-          </li>
-        {% endfor %}
-      </ul>
+
+          {% endfor %}
+        </ul>
+      </div>
     </div>
   </nav>
 </header>

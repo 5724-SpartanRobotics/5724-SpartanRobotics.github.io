@@ -1,141 +1,109 @@
 @import "text-stroke";
 
-header {
-  position: fixed;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  overflow: scroll;
-  pointer-events: none;
+// This intentionally has high specificity (header nav.navbar) so it overrides other styles
+header nav.navbar {
+  padding: 0;
 
-  @include mediaDesktop {
-    pointer-events: auto;
+  /**
+   * Class for a dropdown in the navigation menu that is also a link
+   * (e.g., the clicking "Blue Ridge Brawl" in the menu takes you to
+   * the main BRB page, but hovering (or clicking the arrow on mobile)
+   * causes a dropdown menu with more links (schedule, etc.) to show up.
+   */
+  li.linked-dropdown {
+    // Make the arrow and dropdown next to each other
+    a.nav-link.link-text,
+    a.nav-link.dropdown-toggle {
+      display: inline-block;
+    }
+
+    // For mobile, make the click box larger for the arrow
+    a.nav-link.dropdown-toggle {
+      // The top margin must be 0 so that the onmouseout of the dropdown isn't triggered
+      // when moving from the main link to the dropdown menu.
+      margin-top: 0;
+      
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
   }
 
-  nav.navbar {
-    opacity: 0.9;
-    background: darken($primary-color, 5);
+  @media all and (min-width: $screen-lg) {
+    // See https://bootstrap-menu.com/detail-basic-hover.html
+    .navbar .nav-item .dropdown-menu {
+      display: none;
+    }
+    .navbar .nav-item:hover .dropdown-menu {
+      display: block;
+    }
+    .navbar .nav-item .dropdown-menu {
+      margin-top: 0;
+    }
 
-    // Menu items
-    .nav {
-      // stretch makes the list items fill the full height of the nav menu
-      // so the selected background color change can take up the full space.
-      align-items: stretch;
-      justify-content: center;
+    // Remove the margin on the left side of the dropdown arrow
+    li.linked-dropdown a.nav-link.link-text {
+      padding-right: 0;
+    }
+  }
 
-      .subnav {
-        background: darken($primary-color, 10);
-      }
+  /**
+   * General navigation menu styling
+   */
+  opacity: 0.9;
+  background: darken($primary-color, 5);
 
-      li {
-        transition: none;
-      }
+  .nav-item, .dropdown-menu {
+    font-weight: 300;
+    font-size: 1.9em;
+    padding: 0 0.2em;
+    font-family: "Caesar Dressing", cursive;
+    justify-content: center;
+    transition: none;
 
-      // Link styling
-      a {
-        color: set-text-color($primary-color);
-        font-weight: 300;
-        font-size: 2em;
-        font-family: "Caesar Dressing", cursive;
-        justify-content: center;
-      }
+    .nav-link, .dropdown-item {
+      color: set-text-color($primary-color);
+      transition: none;
 
-      a:hover,
-      .active > a {
+      &:hover,
+      &.active {
         color: $secondary-color;
-        background: darken($primary-color, 8);
         @include text-stroke(1, white);
       }
     }
 
-    // Menu button (mobile)
-    button.navbar-toggle {
-      // This makes the button have no size because otherwise it makes the menu
-      // expand slightly when the menu is supposed to be invisible. The actual
-      // displayed part of the button is the div that is styled below.
-      margin: 0;
-      padding: 0;
-      border: 0;
-      width: 0;
-      height: 0;
-      pointer-events: auto;
+    .dropdown-item {
+      font-size: 0.5em;
 
-      div.menu-button {
-        position: absolute;
-        z-index: 3;
-        right: 35px;
-        top: 35px;
-        cursor: pointer;
-        transition: all 0.5s ease-out;
-        transition-property: opacity, transform;
-        .btn-line {
-          width: 28px;
-          height: 3px;
-          margin: 0 0 5px 0;
-          background: set-text-color($primary-color);
-          transition: all 0.5s ease-out;
-          transition-property: opacity, transform;
-        } // Rotate into X with menu lines
-      }
-    }
-
-    // Navigation branding is invisible except in mobile when the menu is open
-    .nav-branding {
-      display: none;
-    }
-
-    &.open-mobile {
-      pointer-events: initial;
-      & > button.navbar-toggle div.menu-button {
-        transform: rotate(180deg);
-        .btn-line {
-          // Line 1 - Rotate
-          &:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-          } // Line 2 - Hide
-          &:nth-child(2) {
-            opacity: 0;
-          } // Line 3 - Rotate
-          &:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-          }
-        }
-      }
-
-      // Make the background color on nav items expand to the full page width
-      // (on mobile) and that the items are centered horizontally (on mobile)
-      .nav {
-        align-items: center;
-
-        li {
-          width: 100%;
-        }
-      }
-
-      // Menu branding (mobile)
-      .nav-branding {
-        background: $primary-color;
-        display: block;
-        width: 100%;
-        height: 400px;
-        padding: 10px;
-        max-height: 20vh;
-        .portrait {
-          width: 100%;
-          height: 100%;
-          background: url("/assets/img/logos/SpartanLogo_White-varient-vectorized.svg") no-repeat center;
-        }
+      &.active, &:active {
+        background: darken($primary-color, 10);
       }
     }
   }
 
-  @include mediaDesktop {
-    overflow: initial;
+  .navbar-toggler-icon {
+    color: set-text-color($primary-color);
+  }
+  
+  // Style the navbar expansion button to look better
+  .navbar-toggler {
+    font-size: 2em;
+    padding: 0;
+    margin: 0;
 
-    .nav li a {
-      // Take up the full space vertical space of the nav menu on non-mobile
-      // devices.
-      height: 100%;
+    // Center the icon in the middle of the button
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+    
+    // Potentially we could make the navbar sticky on mobile in the future
+    //position: absolute;
+    //top: 20px;
+    //right: 20px;
+  }
+
+  .dropdown-menu {
+    background: darken($primary-color, 10);
   }
 }

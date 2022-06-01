@@ -6,6 +6,22 @@ $brb-logo-image: url(/assets/img/brb/background.jpg);
 $background-opacity: 0.5;
 $sm-background-opacity: 0.3;
 
+// Override default bootstrap colors
+// See https://getbootstrap.com/docs/5.0/customize/css-variables/ for more details
+:root {
+  --bs-primary: #{$primary-color};
+  --bs-primary-rgb: #{red($primary-color),green($primary-color),blue($primary-color)};
+  --bs-secondary: #{$secondary-color};
+  --bs-secondary-rgb: #{red($secondary-color),green($secondary-color),blue($secondary-color)};
+}
+
+// Bootstrap screen sizes for media queries
+$screen-sm : 576px;
+$screen-md : 768px;
+$screen-lg : 992px;
+$screen-xl : 1200px;
+$screen-xxl : 1400px;
+
 @mixin easeOut {
   transition: all 0.5s ease-out;
 }

@@ -271,12 +271,8 @@ table.centered {
   color: #333;
 }
 
-#main-footer {
-  text-align: center;
-  padding: 1rem;
+.main-footer {
   background: darken($primary-color, 10);
-  color: set-text-color($primary-color);
-  height: 60px;
 }
 
 // Google Calendar (schedule.html)

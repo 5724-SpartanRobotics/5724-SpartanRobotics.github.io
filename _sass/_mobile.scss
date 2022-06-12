@@ -3,33 +3,12 @@
   .schedule {
     grid-template-columns: repeat(3, 1fr);
   }
-  .sponsors {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .projects {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  
-  .menu-sublist {
-    position: fixed;
-  }
 }
 
 // Desktops & Laptops
 @include mediaLg {
   .schedule {
     grid-template-columns: repeat(3, 1fr);
-  }
-  .sponsors {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .projects {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .menu-sublist {
-    position: fixed;
-    z-index: 1;
   }
 }
 
@@ -87,12 +66,6 @@
   .schedule {
     grid-template-columns: repeat(2, 1fr);
   }
-  .sponsors {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .projects {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .slideshow {
     // 4rem paddding on each side of main, so this
     // fits it perfectly in the middle with a 3:2
@@ -142,12 +115,6 @@
     padding: 0.75rem 1.25rem;
   }
   .schedule {
-    grid-template-columns: 1fr;
-  }
-  .sponsors {
-    grid-template-columns: 1fr;
-  }
-  .projects {
     grid-template-columns: 1fr;
   }
   .slideshow {

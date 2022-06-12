@@ -195,22 +195,6 @@ table.centered {
   }
 }
 
-// Work/Projects
-.projects {
-  display: grid;
-  gap: 0.7rem;
-  grid-template-columns: repeat(3, 1fr);
-  img {
-    width: 100%;
-    border: 3px #fff solid;
-    &:hover {
-      opacity: 0.5;
-      border-color: $secondary-color;
-      @include easeOut;
-    }
-  }
-}
-
 // Contact page
 .boxes {
   display: flex;
@@ -235,15 +219,10 @@ table.centered {
   }
 }
 
-// Sponsors
-.sponsors {
-  display: grid;
-  gap: 0.7rem;
-  grid-template-columns: repeat(3, 1fr);
-  img {
-    width: 100%;
-    border: 3px #fff solid;
-  }
+// Sponsor logo image styling
+.sponsor-logo {
+  width: 100%;
+  border: 3px #fff solid;
 }
 
 // Button Styles

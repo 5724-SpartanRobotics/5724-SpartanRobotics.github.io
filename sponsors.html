@@ -4,35 +4,42 @@ title: Our Sponsors
 descrption: 'Spartan Robotics FRC 5724 would like to thank all of our gracious sponsors for supporting us.'
 ---
 
-<!-- Sponsor page content -->
-<main id="sponsors">
-  <h1 class="lg-heading">
-    Our Sponsors
-  </h1>
-  <h2 class="sm-heading">
-    A Special Thanks To Our Sponsors!
-  </h2>
+<main>
+  <!-- Sponsor page heading -->
+  <div class="container-fluid p-0">
+    <div class="col">
+      <h1 class="lg-heading">
+        Our Sponsors
+      </h1>
+      <h2 class="sm-heading">
+        A Special Thanks To Our Sponsors!
+      </h2>
+    </div>
+  </div>
 
-  <div id="sponsorGroup" class="sponsors">
+  <!-- Sponsor list -->
+  <div class="container-fluid">
     <!-- This adds all of the sponsors that have logos. A few others are listed below. -->
 
-    {% for sponsor in site.data.sponsors %}
-      <div class="item">
-        <img src="/assets/img/sponsors/{{ sponsor.logo }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}">
-        
-        {% assign site_stripped = sponsor.website | strip_newlines %}
-        {% if site_stripped == "" %}
-          <a href="#" class="btn-light">
-            {{ sponsor.name }}
-          </a>
-        {% else %}
-          <a href="{{ sponsor.website }}" target="_blank" class="btn-light">
-            {{ sponsor.name }}
-            <i class="fas fa-external-link-alt"></i>
-          </a>
-        {% endif %}
-      </div>
-    {% endfor %}
-
+    <div class="row gy-1 row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
+      {% for sponsor in site.data.sponsors %}
+        <div class="col gx-2">
+          <img class="sponsor-logo" src="/assets/img/sponsors/{{ sponsor.logo }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}">
+          
+          {% assign site_stripped = sponsor.website | strip_newlines %}
+          {% if site_stripped == "" %}
+            <a href="#" class="btn-light">
+              {{ sponsor.name }}
+            </a>
+          {% else %}
+            <a href="{{ sponsor.website }}" target="_blank" class="btn-light">
+              {{ sponsor.name }}
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
   </div>
+
 </main>

@@ -8,23 +8,21 @@ description: 'Event schedule For the Blue Ridge Brawl in Salem, Virginia'
   <h1 class="sm-heading">
     Blue Ridge Brawl Event Schedule
   </h1>
-
-  <h2>
-    NOTE: this schedule is only preliminary. Official schedule
-    is subject to change.
-  </h2>
   
   {% comment %} Loop through all files in _data/brb/schedule {% endcomment %}
   {% assign sorted_days = site.data.brb.schedule | sort %}
 
   {% for day in sorted_days %}
-    <h2 class="sm-heading">
-      {% comment %} day[0] gets the name of the file, which is the date (must be YEAR-MONTH-DAY) {% endcomment %}
-      {% comment %} See https://learn.cloudcannon.com/jekyll/date-formatting/ for date formatting {% endcomment %}
-      {{ day[0] | date: "%A, %B %e, %Y" }}
-    </h2>
-
-    <table>
+    <table class="table table-dark table-striped" style="width:80%;">
+      <thead>
+        <tr>
+          <th colspan="2">
+            {% comment %} day[0] gets the name of the file, which is the date (must be YEAR-MONTH-DAY) {% endcomment %}
+            {% comment %} See https://learn.cloudcannon.com/jekyll/date-formatting/ for date formatting {% endcomment %}
+            {{ day[0] | date: "%A, %B %e, %Y" }}
+          </th>
+        </tr>
+      </thead>
       {% comment %} day[1] gets the data from the file, which is the schedule {% endcomment %}
       <tbody>
         {% comment %} Loop through the parts of the schedule {% endcomment %}

@@ -13,11 +13,24 @@ description: 'FRC 5724 Spartan Robotics: Contact Us'
     Reach us here!
   </h2>
   <div class="boxes">
-    <a href="mailto:SalemSpartanRobotics@gmail.com">
-      <div>
-        <span class="text-secondary">Email: </span> SalemSpartanRobotics@gmail.com
-      </div>
-    </a>
+    <div>
+      <a id="mail-link" href="#">
+        <div>
+          <span class="text-secondary">Email: </span> <span id="email-address">Salem.Spartan.Robotics (at) gmail (dot) com</span>
+        </div>
+      </a>  
+      <a>
+      </a>
+      <script>
+        // Email is encoded in base64 here - most web crawlers won't execute javascript
+        // so this should help with scammers scraping our email and sending spam.
+        // The above is human-readable in case someone doesn't use JavaScript but less
+        // likely to be parsed by a dumb machine.
+        let address = atob("U2FsZW1TcGFydGFuUm9ib3RpY3NAZ21haWwuY29t");
+        document.getElementById("email-address").innerText = address;
+        document.getElementById("mail-link").href = "mailto:" + address;
+      </script>
+    </div>
     <div>
       <span class="text-secondary">Phone: </span> (540) 387-2437
     </div>

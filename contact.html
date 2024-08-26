@@ -13,20 +13,24 @@ description: 'FRC 5724 Spartan Robotics: Contact Us'
     Reach us here!
   </h2>
   <div class="boxes">
-    <a id="mail-link" href="#">
+    <a id="addr-link-href" href="mailto:">
       <div>
         <span class="text-secondary">Email: </span>
-        <span id="email-address">Salem.Spartan.Robotics (at) gmail (dot) com</span>
+        <span id="addr-span">As part of our anti-spam filtering, you need to enable JavaScript to see this email address.</span>
       </div>
     </a>
     <script>
-      // Email is encoded in base64 here - most web crawlers won't execute javascript
-      // so this should help with scammers scraping our email and sending spam.
-      // The above is human-readable in case someone doesn't use JavaScript but less
-      // likely to be parsed by a dumb machine.
-      let address = atob("U2FsZW1TcGFydGFuUm9ib3RpY3NAZ21haWwuY29t");
-      document.getElementById("email-address").innerText = address;
-      document.getElementById("mail-link").href = "mailto:" + address;
+      // Email is encoded here with a one-time pad to make it difficult for
+      // web scrapers to notice its here without executing JavaScript -
+      // hopefully will deter some scammers.
+      let chars = [35, 90, 233, 113, 153, 202, 165, 118, 160, 6, 75, 5, 149, 11, 204, 188, 84, 238, 249, 164, 121, 45, 43, 92, 254, 105, 130, 148, 111, 151];
+      let otp = [48, 7, 131, 244, 212, 137, 203, 235, 210, 110, 22, 105, 189, 100, 150, 179, 32, 123, 106, 207, 199, 58, 66, 5, 107, 3, 172, 207, 0, 214];
+      document.getElementById("addr-span").innerText = "";
+      for (let i = 0; i < chars.length; i++) {
+        let char = otp[i] + chars[i];
+        document.getElementById("addr-span").innerText += String.fromCharCode(char % 256);
+        document.getElementById("addr-link-href").href += String.fromCharCode(char % 256);
+      }
     </script>
     <div>
       <span class="text-secondary">Phone: </span> (540) 387-2437
